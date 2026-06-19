@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>宅建ダンジョン v0.3</title>
+<style>
+body{margin:0;background:#222;color:white;font-family:sans-serif;text-align:center}
+#guide{background:#333;padding:10px}
+#hpWrap{width:90%;height:20px;background:#555;margin:8px auto;border-radius:10px;overflow:hidden}
+#hpBar{height:100%;background:lime;width:100%}
+canvas{border:2px solid white;max-width:100%}
+button{margin:3px;padding:10px 14px}
+#questionBox{display:none;background:#333;padding:10px;margin:10px}
+.choice{display:block;width:95%;margin:6px auto}
+</style>
+</head>
+<body>
+
+<div id="guide">
+<h3>宅建ダンジョン v0.3</h3>
+右下の城を目指そう！<br>
+草 HP-1 / 森 HP-2<br>
+正解 HP+10 / 不正解 HP-5
+</div>
+
+<div id="hpText"></div>
+<div id="hpWrap"><div id="hpBar"></div></div>
+
+<canvas id="game" width="640" height="384"></canvas>
+
+<div id="questionBox">
+<h3 id="questionText"></h3>
+<button class="choice" id="c1"></button>
+<button class="choice" id="c2"></button>
+<button class="choice" id="c3"></button>
+<button class="choice" id="c4"></button>
+</div>
+
+<div>
+<div><button onclick="move(0,-1)">↑</button></div>
+<div>
+<button onclick="move(-1,0)">←</button>
+<button onclick="move(0,1)">↓</button>
+<button onclick="move(1,0)">→</button>
+<button onclick="talk()">話す</button>
+</div>
+</div>
+
+<script>
+const MAX_HP=15;
+let questions=[];
+let usedQuestions=[];
+let activeNpc=null;
+
+const fallbackQuestions=[
+{id:1,question:"宅建試験は何問？",choices:["30","40","50","60"],answer:3},
+{id:2,question:"借家人保護の法律は？",choices:["会社法","借地借家法","刑法","民訴法"],answer:2}
+];
+
+async function loadQuestions(){
+
+ try{
+
+   const res = await fetch("takken_v03_questions.json");
+
+   console.log("fetch結果", res.status);
+
+   if(!res.ok){
+      throw new Error("json error");
+   }
+
+   questions = await res.json();
+
+   alert("JSON読込成功：" + questions.length + "問");
+
+ }catch(e){
+
+   console.error(e);
+
+   alert("JSON読込失敗");
+
+   questions = fallbackQuestions;
+ }
+}
+
+const map=[
+[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+[1,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1],
+[1,0,2,2,2,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1],
+[1,0,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,2,2,2,0,0,0,0,3,3,3,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,3,3,3,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,0,1,0,0,0,2,2,2,0,0,0,0,0,0,0,0,0,1],
+[1,1,1,1,1,0,0,2,2,2,0,0,0,0,0,0,0,0,0,1],
+[1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+];
+
+const canvas=document.getElementById("game");
+const ctx=canvas.getContext("2d");
+const tile=32;
+
+const player={x:1,y:1,hp:MAX_HP};
+const goal={x:18,y:10};
+
+const npcs=[
+{x:4,y:3,used:false},
+{x:10,y:5,used:false},
+{x:15,y:8,used:false}
+];
+
+function updateHP(){
+ document.getElementById("hpText").innerText=`HP:${player.hp}/${MAX_HP}`;
+ document.getElementById("hpBar").style.width=(player.hp/MAX_HP*100)+"%";
+}
+
+function draw(){
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ for(let y=0;y<12;y++){
+  for(let x=0;x<20;x++){
+   const t=map[y][x];
+   if(t===0) ctx.fillStyle="#4CAF50";
+   if(t===1) ctx.fillStyle="#777";
+   if(t===2) ctx.fillStyle="#1B5E20";
+   if(t===3) ctx.fillStyle="#2196F3";
+   ctx.fillRect(x*tile,y*tile,tile,tile);
+   ctx.strokeStyle="#2f2f2f";
+   ctx.strokeRect(x*tile,y*tile,tile,tile);
+  }
+ }
+
+ ctx.fillStyle="brown";
+ ctx.fillRect(goal.x*tile,goal.y*tile,tile,tile);
+ ctx.fillStyle="yellow";
+ ctx.fillText("城",goal.x*tile+8,goal.y*tile+20);
+
+ npcs.forEach(n=>{
+  ctx.fillStyle=n.used?"orange":"red";
+  ctx.fillRect(n.x*tile+8,n.y*tile+4,16,24);
+ });
+
+ ctx.fillStyle="blue";
+ ctx.fillRect(player.x*tile+8,player.y*tile+4,16,24);
+}
+
+function gameOver(){
+ alert("ゲームオーバー");
+ location.reload();
+}
+
+function move(dx,dy){
+ let nx=player.x+dx;
+ let ny=player.y+dy;
+
+ if(map[ny][nx]===1 || map[ny][nx]===3) return;
+ if(npcs.some(n=>n.x===nx && n.y===ny)) return;
+
+ player.x=nx; player.y=ny;
+ player.hp -= (map[ny][nx]===2)?2:1;
+
+ if(player.hp<=0) gameOver();
+
+ if(player.x===goal.x && player.y===goal.y){
+   alert("クリア！");
+ }
+
+ updateHP();
+ draw();
+}
+
+function talk(){
+ for(const n of npcs){
+  const d=Math.abs(player.x-n.x)+Math.abs(player.y-n.y);
+  if(d===1){
+
+   if(n.used){
+    alert("この村人は利用済み");
+    return;
+   }
+
+   const available=questions.filter(q=>!usedQuestions.includes(q.id));
+   if(available.length===0){
+    alert("問題を使い切った");
+    return;
+   }
+
+   const q=available[Math.floor(Math.random()*available.length)];
+   usedQuestions.push(q.id);
+   activeNpc=n;
+
+   document.getElementById("questionBox").style.display="block";
+   document.getElementById("questionText").innerText=q.question;
+
+   for(let i=0;i<4;i++){
+     const btn=document.getElementById("c"+(i+1));
+     btn.innerText=(i+1)+" : "+q.choices[i];
+     btn.onclick=()=>answerQuestion(i+1,q);
+   }
+   return;
+  }
+ }
+ alert("村人の隣で話そう");
+}
+
+function answerQuestion(ans,q){
+ if(ans===q.answer){
+   alert("正解！ HP+10");
+   player.hp=Math.min(MAX_HP,player.hp+10);
+   activeNpc.used=true;
+ }else{
+   alert("不正解！ HP-5");
+   player.hp-=5;
+   if(player.hp<=0) gameOver();
+ }
+
+ document.getElementById("questionBox").style.display="none";
+ updateHP();
+ draw();
+}
+
+document.addEventListener("keydown",e=>{
+ if(e.key==="ArrowUp") move(0,-1);
+ if(e.key==="ArrowDown") move(0,1);
+ if(e.key==="ArrowLeft") move(-1,0);
+ if(e.key==="ArrowRight") move(1,0);
+ if(e.code==="Space") talk();
+});
+
+window.onload=async()=>{
+ await loadQuestions();
+ updateHP();
+ draw();
+};
+</script>
+</body>
+</html>
