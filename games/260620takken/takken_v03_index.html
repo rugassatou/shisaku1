@@ -48,7 +48,7 @@ button{margin:3px;padding:10px 14px}
 </div>
 
 <script>
-const MAX_HP=40;
+const MAX_HP=12;
 let questions=[];
 let usedQuestions=[];
 let activeNpc=null;
@@ -60,7 +60,7 @@ const fallbackQuestions=[
 
 async function loadQuestions(){
  try{
-   const res=await fetch("questions.json");
+   const res=await fetch("takken_v03_questions.json");
    if(!res.ok) throw new Error("json error");
    questions=await res.json();
  }catch(e){
