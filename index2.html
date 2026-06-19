@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>妻ダッシュボード</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    background:#f5f3ef;
+    font-family:
+    "Segoe UI",
+    "Yu Gothic UI",
+    "Hiragino Sans",
+    sans-serif;
+}
+
+.container{
+    position:relative;
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+}
+
+.bg{
+    width:100%;
+    display:block;
+}
+
+.number{
+    position:absolute;
+
+    width:100px;
+    margin-left:-50px;
+
+    font-size:32px;
+    font-weight:300;
+
+    letter-spacing:2px;
+
+    color:#222;
+
+    text-align:center;
+}
+
+.clock{
+    position:absolute;
+
+    font-size:26px;
+
+    font-weight:300;
+
+    color:#222;
+}
+
+/* 宅建 */
+
+#takken-day{
+    top:34.5%;
+    left:22%;
+}
+
+#takken-hour{
+    top:34.5%;
+    left:39%;
+}
+
+#takken-min{
+    top:34.5%;
+    left:55%;
+}
+
+#takken-sec{
+    top:34.5%;
+    left:71%;
+}
+
+/* 申込 */
+
+#entry-day{
+    top:55.5%;
+    left:22%;
+}
+
+#entry-hour{
+    top:55.5%;
+    left:39%;
+}
+
+#entry-min{
+    top:55.5%;
+    left:55%;
+}
+
+#entry-sec{
+    top:55.5%;
+    left:71%;
+}
+
+/* 誕生日 */
+
+#birth-day{
+    top:76.4%;
+    left:22%;
+}
+
+#birth-hour{
+    top:76.4%;
+    left:39%;
+}
+
+#birth-min{
+    top:76.4%;
+    left:55%;
+}
+
+#birth-sec{
+    top:76.4%;
+    left:71%;
+}
+
+/* 現在時刻 */
+
+#clock{
+    top:94.2%;
+    left:7%;
+}
+
+@media(max-width:700px){
+
+.number{
+    font-size:22px;
+    width:70px;
+    margin-left:-35px;
+}
+
+.clock{
+    font-size:16px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="2.png" class="bg">
+
+<div id="takken-day" class="number">0</div>
+<div id="takken-hour" class="number">0</div>
+<div id="takken-min" class="number">0</div>
+<div id="takken-sec" class="number">0</div>
+
+<div id="entry-day" class="number">0</div>
+<div id="entry-hour" class="number">0</div>
+<div id="entry-min" class="number">0</div>
+<div id="entry-sec" class="number">0</div>
+
+<div id="birth-day" class="number">0</div>
+<div id="birth-hour" class="number">0</div>
+<div id="birth-min" class="number">0</div>
+<div id="birth-sec" class="number">0</div>
+
+<div id="clock" class="clock"></div>
+
+</div>
+
+<script>
+
+const takkenDate = new Date("2026-10-18T00:00:00");
+const entryDate  = new Date("2026-07-01T00:00:00");
+const birthDate  = new Date("2027-03-21T00:00:00");
+
+function updateCountdown(target,prefix){
+
+    const now = new Date();
+
+    let diff = target - now;
+
+    if(diff < 0){
+        diff = 0;
+    }
+
+    const days =
+    Math.floor(diff / (1000*60*60*24));
+
+    const hours =
+    Math.floor(
+      (diff % (1000*60*60*24))
+      /
+      (1000*60*60)
+    );
+
+    const mins =
+    Math.floor(
+      (diff % (1000*60*60))
+      /
+      (1000*60)
+    );
+
+    const secs =
+    Math.floor(
+      (diff % (1000*60))
+      /
+      1000
+    );
+
+    document.getElementById(prefix+"-day").innerText =
+        days;
+
+    document.getElementById(prefix+"-hour").innerText =
+        String(hours).padStart(2,"0");
+
+    document.getElementById(prefix+"-min").innerText =
+        String(mins).padStart(2,"0");
+
+    document.getElementById(prefix+"-sec").innerText =
+        String(secs).padStart(2,"0");
+}
+
+function updateClock(){
+
+    const now = new Date();
+
+    document.getElementById("clock").innerText =
+        now.toLocaleString("ja-JP");
+}
+
+function updateAll(){
+
+    updateCountdown(takkenDate,"takken");
+    updateCountdown(entryDate,"entry");
+    updateCountdown(birthDate,"birth");
+
+    updateClock();
+}
+
+updateAll();
+
+setInterval(updateAll,1000);
+
+</script>
+
+</body>
+</html>
