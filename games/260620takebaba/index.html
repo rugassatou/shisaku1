@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>宅建ババ抜き</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>宅建ババ抜き</h1>
+
+<div id="status">
+読み込み中...
+</div>
+
+<div id="turnBox">
+あなたのターン
+</div>
+
+<!-- CPU -->
+
+<section>
+
+<h2>CPU</h2>
+
+<p>
+CPUカードを1枚クリックして引く
+</p>
+
+<div id="cpuHand" class="hand">
+</div>
+
+</section>
+
+<!-- プレビュー -->
+
+<section>
+
+<div id="previewBox">
+
+<h3>カード説明</h3>
+
+カードにマウスを乗せると表示
+
+</div>
+
+</section>
+
+<!-- 問題 -->
+
+<section>
+
+<div id="questionBox">
+
+ペアを成立させると問題が出ます
+
+</div>
+
+</section>
+
+<!-- 場 -->
+
+<section>
+
+<h2>場</h2>
+
+<div id="playArea">
+
+<div id="slotA" class="dropZone">
+
+カード①
+
+</div>
+
+<div id="slotB" class="dropZone">
+
+カード②
+
+</div>
+
+</div>
+
+</section>
+
+<!-- プレイヤー -->
+
+<section>
+
+<h2>あなた</h2>
+
+<div id="playerHand" class="hand">
+</div>
+
+</section>
+
+<!-- 勝敗 -->
+
+<div id="resultBox">
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>
