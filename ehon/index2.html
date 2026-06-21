@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>よるカフェの なかまたち</title>
+	<style>
+		:root {
+			--bg1: #1b1f4b;
+			--bg2: #3a2a63;
+			--ink: #2f2a24;
+			--card: rgba(255, 251, 244, 0.9);
+			--accent: #d26a4d;
+			--accent-soft: #f6bc6a;
+			--ok: #5ca15c;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: grid;
+			place-items: center;
+			font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic UI", sans-serif;
+			color: var(--ink);
+			background:
+				linear-gradient(135deg, #00000044, #00000010),
+				radial-gradient(circle at 15% 20%, #ffffffa8 0%, #ffffff00 45%),
+				radial-gradient(circle at 80% 80%, #ffe6cc 0%, #ffe6cc00 40%),
+				url("background-cafe-night.svg") center / cover no-repeat,
+				linear-gradient(135deg, var(--bg1), var(--bg2));
+			overflow: hidden;
+		}
+
+		.float-shape {
+			position: fixed;
+			border-radius: 50%;
+			opacity: 0.25;
+			filter: blur(2px);
+			animation: drift 8s ease-in-out infinite;
+			pointer-events: none;
+		}
+
+		.s1 { width: 180px; height: 180px; background: #ffd08a; top: 7vh; left: 8vw; }
+		.s2 { width: 140px; height: 140px; background: #7ec7ff; bottom: 12vh; right: 10vw; animation-delay: -3s; }
+		.s3 { width: 90px; height: 90px; background: #ffb4cc; top: 18vh; right: 18vw; animation-delay: -5s; }
+
+		@keyframes drift {
+			0%, 100% { transform: translateY(0) translateX(0); }
+			50% { transform: translateY(-12px) translateX(8px); }
+		}
+
+		.book {
+			width: min(95vw, 980px);
+			background: var(--card);
+			border: 2px solid #ffffff;
+			border-radius: 28px;
+			box-shadow: 0 20px 40px #0000001f;
+			backdrop-filter: blur(6px);
+			overflow: hidden;
+			animation: pop-in 500ms ease;
+		}
+
+		@keyframes pop-in {
+			from { transform: translateY(14px) scale(0.98); opacity: 0; }
+			to { transform: translateY(0) scale(1); opacity: 1; }
+		}
+
+		.head {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 14px 18px;
+			background: linear-gradient(90deg, #ffffffcc, #fff3e7);
+			border-bottom: 1px solid #00000011;
+			font-size: 0.96rem;
+			font-weight: 700;
+		}
+
+		.badge {
+			background: #fff;
+			border: 1px solid #00000012;
+			border-radius: 999px;
+			padding: 6px 12px;
+			font-size: 0.86rem;
+		}
+
+		.page {
+			min-height: 460px;
+			display: grid;
+			grid-template-columns: 1fr;
+			align-items: stretch;
+			padding: 18px;
+			transition: background 500ms ease;
+		}
+
+		.spread {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 14px;
+			width: 100%;
+			height: 100%;
+		}
+
+		.page-panel {
+			background: #fffdf8;
+			border: 1px solid #0000001f;
+			border-radius: 14px;
+			padding: 16px;
+			box-shadow: inset 0 0 0 1px #ffffffcc;
+		}
+
+		.text-panel {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: left;
+		}
+
+		.illustration-panel {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(180deg, #fff8ef, #fff2de);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.illustration-panel::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background:
+				radial-gradient(circle at 20% 20%, #ffe7b7 0%, #ffe7b700 50%),
+				radial-gradient(circle at 80% 78%, #ffd2c0 0%, #ffd2c000 46%);
+			opacity: 0.65;
+			pointer-events: none;
+		}
+
+		.emoji {
+			font-size: clamp(3rem, 10vw, 5.4rem);
+			line-height: 1;
+			margin-bottom: 0;
+			animation: bounce 1.4s ease-in-out infinite;
+			filter: drop-shadow(0 8px 10px #0000001f);
+			position: relative;
+			z-index: 1;
+		}
+
+		.character-row {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 12px;
+			padding: 6px;
+		}
+
+		.latte-image {
+			width: clamp(72px, 18vw, 116px);
+			height: clamp(72px, 18vw, 116px);
+			object-fit: cover;
+			border-radius: 20px;
+			border: 2px solid #ffffffcc;
+			box-shadow: 0 8px 18px #00000026;
+			animation: bounce 1.5s ease-in-out infinite;
+		}
+
+		@keyframes bounce {
+			0%, 100% { transform: translateY(0); }
+			50% { transform: translateY(-8px); }
+		}
+
+		.title {
+			margin: 0 0 10px;
+			font-size: clamp(1.4rem, 4vw, 2rem);
+		}
+
+		.text {
+			margin: 0;
+			max-width: 100%;
+			font-size: clamp(1rem, 2.2vw, 1.25rem);
+			line-height: 1.85;
+			font-weight: 700;
+		}
+
+		.text-label {
+			font-size: 0.82rem;
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			color: #6e6459;
+			margin: 0 0 8px;
+		}
+
+		.dots {
+			display: flex;
+			gap: 8px;
+			justify-content: center;
+			padding: 0 0 16px;
+		}
+
+		.dot {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #00000022;
+			transition: transform 180ms ease, background 180ms ease;
+		}
+
+		.dot.active {
+			background: var(--accent);
+			transform: scale(1.3);
+		}
+
+		.controls {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			padding: 0 16px 20px;
+		}
+
+		button {
+			border: 0;
+			border-radius: 14px;
+			padding: 10px 18px;
+			font: inherit;
+			font-weight: 700;
+			cursor: pointer;
+		}
+
+		.start-btn {
+			background: var(--accent);
+			color: #fff;
+			box-shadow: 0 8px 16px #ff7b544d;
+		}
+
+		.restart-btn {
+			background: #fff;
+			color: var(--ink);
+			border: 1px solid #0000001a;
+		}
+
+		.test-btn {
+			background: #fffaf2;
+			color: #7d4f2a;
+			border: 1px solid #7d4f2a33;
+		}
+
+		.nav-btn {
+			background: #fff;
+			color: #5b4c3b;
+			border: 1px solid #00000024;
+		}
+
+		.nav-btn:disabled {
+			opacity: 0.45;
+			cursor: not-allowed;
+		}
+
+		.status {
+			text-align: center;
+			padding: 0 16px 18px;
+			font-size: 0.9rem;
+			color: #4f473f;
+			min-height: 1.2rem;
+		}
+
+		.settings {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 8px;
+			padding: 0 16px 10px;
+			font-size: 0.92rem;
+			font-weight: 700;
+			flex-wrap: wrap;
+		}
+
+		.settings select {
+			font: inherit;
+			font-size: 0.9rem;
+			padding: 6px 10px;
+			border-radius: 10px;
+			border: 1px solid #00000026;
+			background: #fff;
+		}
+
+		@media (max-width: 540px) {
+			.page {
+				min-height: 380px;
+			}
+
+			.spread {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="float-shape s1"></div>
+	<div class="float-shape s2"></div>
+	<div class="float-shape s3"></div>
+
+	<main class="book" aria-live="polite">
+		<header class="head">
+			<div>よるカフェの なかまたち</div>
+			<div class="badge" id="pageCounter">1 / 6</div>
+		</header>
+
+		<section class="page" id="page" style="background: #f7efe3;">
+			<div class="spread">
+				<article class="page-panel text-panel">
+					<p class="text-label">よみあげぶん</p>
+					<h1 class="title" id="title">よるの カフェが ひらいたよ</h1>
+					<p class="text" id="text">まちが しずかになると、カフェの あかりが ふわっと ともります。<br>カフェラテくん と いちごショートちゃん、パンケーキきょうだい、プリンさんが そろって「こんばんは！」</p>
+				</article>
+				<article class="page-panel illustration-panel">
+					<div class="character-row">
+						<img class="latte-image" id="latteImage" src="カフェラテちゃん.PNG" alt="カフェラテくん" />
+						<div class="emoji" id="emoji" aria-hidden="true">🍓🥞🍮🌙</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<div class="dots" id="dots" aria-label="ページインジケーター"></div>
+
+		<div class="controls">
+			<button class="nav-btn" id="prevBtn" type="button">まえのページ</button>
+			<button class="start-btn" id="startBtn">よみきかせ スタート</button>
+			<button class="nav-btn" id="nextBtn" type="button">つぎのページ</button>
+			<button class="test-btn" id="testBtn" type="button">おんせい テスト</button>
+			<button class="restart-btn" id="restartBtn" type="button">さいしょ から</button>
+		</div>
+		<div class="settings">
+			<label for="speedSelect">はなす はやさ</label>
+			<select id="speedSelect">
+				<option value="0.8">ゆっくり</option>
+				<option value="0.7">とても ゆっくり</option>
+				<option value="0.9">ふつう</option>
+			</select>
+			<span>こえ: Google 日本語（ja-JP）優先</span>
+		</div>
+		<div class="status" id="status">まず「おんせい テスト」で こえが でるか かくにんできます。</div>
+	</main>
+
+	<script>
+		const pages = [
+			{
+				title: "よるの カフェが ひらいたよ",
+				text: "まちが しずかになると、カフェの あかりが ふわっと ともります。\nカフェラテくん と いちごショートちゃん、パンケーキきょうだい、プリンさんが そろって「こんばんは！」",
+				speech: "まちが しずかになると、カフェの あかりが ふわっと ともります。カフェラテくん と いちごショートちゃん、パンケーキきょうだい、プリンさんが そろって、こんばんは。",
+				emoji: "🍓🥞🥞🍮🌙",
+				showLatte: true,
+				bg: "#f7efe3"
+			},
+			{
+				title: "あたらしい なかま",
+				text: "とびらが ちりん、と なって、きせつげんてい の ゆずミルクラテちゃんが やってきました。\n「はじめまして。よろしくね」って、にこっと えしゃく。",
+				speech: "とびらが ちりん、と なって、きせつげんてい の ゆずミルクラテちゃんが やってきました。はじめまして。よろしくね。そういって、にこっと えしゃくしました。",
+				emoji: "🍊🍼✨",
+				showLatte: true,
+				bg: "#fff2cc"
+			},
+			{
+				title: "みんな どきどき",
+				text: "みんなは ちょっぴり どきどき。\n「どんな あじかな？」「いつもの ちーむに なじめるかな？」って、こそこそ そうだん。",
+				speech: "みんなは ちょっぴり どきどき。どんな あじかな。いつもの ちーむに なじめるかな。そういって、こそこそ そうだんしました。",
+				emoji: "🍓😳🥞❓",
+				showLatte: true,
+				bg: "#f6e7ff"
+			},
+			{
+				title: "おきゃくさんの おねがい",
+				text: "そのとき おきゃくさんが いいました。\n「やさしくて、げんきが でる いっぽんを おねがいします」",
+				speech: "そのとき おきゃくさんが いいました。やさしくて、げんきが でる いっぽんを おねがいします。みんなは うん、と うなずきました。",
+				emoji: "🧒💫🍓🍮",
+				showLatte: true,
+				bg: "#e9f6ff"
+			},
+			{
+				title: "ちからを あわせて",
+				text: "カフェラテくんが こくを だし、いちごショートちゃんが ふんわり あまさを そえます。\nパンケーキきょうだいは げんきの かけごえ。プリンさんは かおりの ひけつを おしえてくれました。",
+				speech: "カフェラテくんが こくを だし、いちごショートちゃんが ふんわり あまさを そえます。パンケーキきょうだいは げんきの かけごえ。プリンさんは かおりの ひけつを おしえてくれました。",
+				emoji: "🍓🥞😆🍮📚",
+				showLatte: true,
+				bg: "#ffe7d9"
+			},
+			{
+				title: "だいすきな なかま",
+				text: "できあがった カップは、やさしい あじで こころが ぽかぽか。\n「ゆずミルクラテちゃん、これからも いっしょに がんばろうね」みんな にっこり。",
+				speech: "できあがった カップは、やさしい あじで こころが ぽかぽか。ゆずミルクラテちゃん、これからも いっしょに がんばろうね。みんなは にっこり わらいました。",
+				emoji: "🍓🥞🍮🍊🤝✨",
+				showLatte: true,
+				bg: "#e8f8ec"
+			}
+		];
+
+		const pageEl = document.getElementById("page");
+		const emojiEl = document.getElementById("emoji");
+		const titleEl = document.getElementById("title");
+		const textEl = document.getElementById("text");
+		const latteImageEl = document.getElementById("latteImage");
+		const pageCounterEl = document.getElementById("pageCounter");
+		const dotsEl = document.getElementById("dots");
+		const statusEl = document.getElementById("status");
+		const prevBtn = document.getElementById("prevBtn");
+		const startBtn = document.getElementById("startBtn");
+		const nextBtn = document.getElementById("nextBtn");
+		const testBtn = document.getElementById("testBtn");
+		const restartBtn = document.getElementById("restartBtn");
+		const speedSelect = document.getElementById("speedSelect");
+
+		let pageIndex = 0;
+		let started = false;
+		let autoTimer = null;
+		let emergencyTimer = null;
+		let playbackToken = 0;
+
+		const speechSupported = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+		const synth = speechSupported ? window.speechSynthesis : null;
+		const basePitch = 1.05;
+		const googlePitchBoost = 0.08;
+
+		function createDots() {
+			dotsEl.innerHTML = "";
+			pages.forEach((_, i) => {
+				const dot = document.createElement("span");
+				dot.className = "dot" + (i === pageIndex ? " active" : "");
+				dotsEl.appendChild(dot);
+			});
+		}
+
+		function renderPage() {
+			const p = pages[pageIndex];
+			pageEl.style.background = p.bg;
+			emojiEl.textContent = p.emoji;
+			titleEl.textContent = p.title;
+			textEl.innerHTML = p.text.replace(/\n/g, "<br>");
+			latteImageEl.style.display = p.showLatte ? "block" : "none";
+			pageCounterEl.textContent = `${pageIndex + 1} / ${pages.length}`;
+
+			[...dotsEl.children].forEach((d, i) => {
+				d.classList.toggle("active", i === pageIndex);
+			});
+
+			updateNavButtons();
+		}
+
+		function updateNavButtons() {
+			prevBtn.disabled = pageIndex === 0;
+			nextBtn.disabled = pageIndex === pages.length - 1;
+		}
+
+		function listJapaneseVoices() {
+			if (!synth) {
+				return [];
+			}
+			const voices = synth.getVoices();
+			if (!voices || voices.length === 0) {
+				return [];
+			}
+			return voices.filter(v => v.lang === "ja-JP" || v.lang.startsWith("ja"));
+		}
+
+		function pickJapaneseVoice() {
+			const jaVoices = listJapaneseVoices();
+			if (jaVoices.length === 0) {
+				return null;
+			}
+
+			const googleJa = jaVoices.find(v => {
+				const name = v.name.toLowerCase();
+				return (v.lang === "ja-JP" || v.lang.startsWith("ja")) && name.includes("google");
+			});
+
+			if (googleJa) {
+				return googleJa;
+			}
+
+			return jaVoices[0];
+		}
+
+		function splitForNaturalSpeech(text) {
+			return text
+				.replace(/\n/g, " ")
+				.split(/(?<=[。！？!?.])/)
+				.map(s => s.trim())
+				.filter(Boolean);
+		}
+
+		function currentRate() {
+			return Number(speedSelect.value) || 0.8;
+		}
+
+		function isGoogleJaVoice(voice) {
+			if (!voice || !voice.name || !voice.lang) {
+				return false;
+			}
+			return voice.lang.startsWith("ja") && voice.name.toLowerCase().includes("google");
+		}
+
+		function pitchForVoice(voice, variation = 0) {
+			const boost = isGoogleJaVoice(voice) ? googlePitchBoost : 0;
+			return Math.min(2, basePitch + boost + variation);
+		}
+
+		function stopPlayback() {
+			playbackToken += 1;
+			clearTimeout(autoTimer);
+			clearTimeout(emergencyTimer);
+			if (synth) {
+				synth.cancel();
+			}
+		}
+
+		function goToPage(newIndex, shouldRead = true) {
+			const bounded = Math.max(0, Math.min(newIndex, pages.length - 1));
+			pageIndex = bounded;
+			renderPage();
+			if (shouldRead) {
+				started = true;
+				startBtn.textContent = "よみなおし";
+				speakCurrentPage();
+			}
+		}
+
+		function speakChunksSequentially(chunks, onAllEnd) {
+			if (!chunks.length || !synth) {
+				onAllEnd();
+				return;
+			}
+
+			const voice = pickJapaneseVoice();
+			let i = 0;
+
+			const speakNext = () => {
+				if (i >= chunks.length) {
+					onAllEnd();
+					return;
+				}
+
+				const utter = new SpeechSynthesisUtterance(chunks[i]);
+				if (voice) {
+					utter.voice = voice;
+				}
+				utter.lang = "ja-JP";
+				utter.rate = currentRate();
+				utter.pitch = pitchForVoice(voice, i % 2 === 0 ? 0.03 : -0.02);
+				utter.volume = 1;
+
+				utter.onend = () => {
+					i += 1;
+					setTimeout(speakNext, 180);
+				};
+
+				utter.onerror = () => {
+					i += 1;
+					setTimeout(speakNext, 150);
+				};
+
+				synth.speak(utter);
+			};
+
+			speakNext();
+		}
+
+		function showUnsupportedMessage() {
+			statusEl.textContent = "この表示環境では音声よみあげが使えません。Edge/Chromeで開いてください。";
+		}
+
+		function scheduleNextPage(delayMs) {
+			const token = playbackToken;
+			clearTimeout(autoTimer);
+			autoTimer = setTimeout(() => {
+				if (token !== playbackToken) {
+					return;
+				}
+				if (pageIndex < pages.length - 1) {
+					pageIndex += 1;
+					renderPage();
+					speakCurrentPage();
+				} else {
+					started = false;
+					statusEl.textContent = "おしまい。もういちど きくときは『さいしょから』をおしてね。";
+					startBtn.textContent = "もういちど じどう よみ";
+				}
+			}, delayMs);
+		}
+
+		function speakCurrentPage() {
+			const p = pages[pageIndex];
+			const speech = p.speech || `${p.title}。 ${p.text.replace(/\n/g, " ")}`;
+			const chunks = splitForNaturalSpeech(speech);
+
+			if (!speechSupported || !synth) {
+				showUnsupportedMessage();
+				scheduleNextPage(2500);
+				return;
+			}
+
+			playbackToken += 1;
+			const currentToken = playbackToken;
+
+			synth.cancel();
+			synth.resume();
+			clearTimeout(autoTimer);
+			clearTimeout(emergencyTimer);
+
+			statusEl.textContent = "よみあげちゅう... つぎのページへ じどうで すすみます。";
+
+			// 通常は全文読み終わってから進む。端末不具合時のみ保険で進行。
+			emergencyTimer = setTimeout(() => {
+				if (currentToken !== playbackToken) {
+					return;
+				}
+				statusEl.textContent = "読み上げが止まったため、つぎのページへ進みます。";
+				scheduleNextPage(1400);
+			}, Math.max(12000, speech.length * 500));
+
+			setTimeout(() => {
+				if (currentToken !== playbackToken) {
+					return;
+				}
+				speakChunksSequentially(chunks, () => {
+					if (currentToken !== playbackToken) {
+						return;
+					}
+					clearTimeout(emergencyTimer);
+					scheduleNextPage(1200);
+				});
+			}, 80);
+		}
+
+		function startStory(fromBeginning = false) {
+			stopPlayback();
+			if (fromBeginning) {
+				pageIndex = 0;
+			}
+			started = true;
+			startBtn.textContent = "よみなおし";
+			renderPage();
+			speakCurrentPage();
+		}
+
+		prevBtn.addEventListener("click", () => {
+			if (pageIndex === 0) {
+				return;
+			}
+			stopPlayback();
+			goToPage(pageIndex - 1, true);
+		});
+
+		startBtn.addEventListener("click", () => {
+			startStory(true);
+		});
+
+		nextBtn.addEventListener("click", () => {
+			if (pageIndex === pages.length - 1) {
+				return;
+			}
+			stopPlayback();
+			goToPage(pageIndex + 1, true);
+		});
+
+		testBtn.addEventListener("click", () => {
+			if (!speechSupported || !synth) {
+				showUnsupportedMessage();
+				return;
+			}
+
+			stopPlayback();
+			synth.resume();
+
+			const test = new SpeechSynthesisUtterance("こんにちは。おんせいテストです。カフェラテくんたち、じゅんびできています。");
+			const voice = pickJapaneseVoice();
+			if (voice) {
+				test.voice = voice;
+			}
+			test.lang = "ja-JP";
+			test.rate = currentRate();
+			test.pitch = pitchForVoice(voice, 0);
+
+			test.onstart = () => {
+				statusEl.textContent = "テスト音声を再生しています。";
+			};
+			test.onend = () => {
+				statusEl.textContent = "テストOKです。『よみきかせ スタート』を押してください。";
+			};
+			test.onerror = () => {
+				statusEl.textContent = "音声テストに失敗しました。Edge/Chromeで開き、タブのミュートを確認してください。";
+			};
+
+			setTimeout(() => {
+				synth.speak(test);
+			}, 80);
+		});
+
+		restartBtn.addEventListener("click", () => {
+			stopPlayback();
+			startStory(true);
+		});
+
+		window.addEventListener("beforeunload", () => {
+			playbackToken += 1;
+			clearTimeout(autoTimer);
+			clearTimeout(emergencyTimer);
+			if (synth) {
+				synth.cancel();
+			}
+		});
+
+		// 音声リストは非同期で取得されるため、読み込み後に再チェックする
+		if (synth && typeof synth.onvoiceschanged !== "undefined") {
+			synth.onvoiceschanged = () => {
+				const chosen = pickJapaneseVoice();
+				if (!isGoogleJaVoice(chosen)) {
+					statusEl.textContent = "Google 日本語が見つからないため、日本語の別音声を使います。";
+				}
+			};
+		}
+
+		const initialVoice = pickJapaneseVoice();
+		if (!isGoogleJaVoice(initialVoice)) {
+			statusEl.textContent = "Google 日本語が見つからないため、日本語の別音声を使います。";
+		}
+		createDots();
+		renderPage();
+	</script>
+</body>
+</html>
