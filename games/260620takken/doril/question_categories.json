@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "setId": "takken_v03",
+  "categories": [
+    "民法等",
+    "法令上の制限",
+    "宅建業法",
+    "税・価格",
+    "その他"
+  ],
+  "ranges": [
+    { "start": 1, "end": 14, "category": "民法等" },
+    { "start": 15, "end": 20, "category": "法令上の制限" },
+    { "start": 21, "end": 30, "category": "宅建業法" },
+    { "start": 31, "end": 46, "category": "民法等" },
+    { "start": 47, "end": 51, "category": "法令上の制限" },
+    { "start": 52, "end": 71, "category": "宅建業法" },
+    { "start": 72, "end": 75, "category": "税・価格" },
+    { "start": 76, "end": 98, "category": "民法等" },
+    { "start": 99, "end": 108, "category": "法令上の制限" },
+    { "start": 109, "end": 115, "category": "宅建業法" },
+    { "start": 116, "end": 120, "category": "その他" }
+  ]
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DORIL 宅建ドリル</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="appShell">
+
+<header class="hero">
+<p class="eyebrow">DORIL</p>
+<h1>宅建スタディドリル</h1>
+<p class="heroText">
+問題番号ごとに正誤履歴を3件まで保持し、保存文字列でつづきから再開できます。
+</p>
+</header>
+
+<main class="mainGrid">
+
+<section id="homeScreen" class="panel screen active">
+<div class="sectionHead">
+<h2>はじめる</h2>
+<p>開始方法と出題モードを選びます。</p>
+</div>
+
+<div class="modeGrid">
+<label class="modeCard">
+<input type="radio" name="studyMode" value="all" checked>
+<span>通常ランダム</span>
+<small>全問題からランダム出題</small>
+<small>既に正解した問題も再登場します</small>
+<small class="modeMeta">おすすめ: 最初から広く回したいとき</small>
+<small class="modeBadge">全問題対象</small>
+<small class="modeHint">履歴3件と疑似セーブの基準になるモードです</small>
+ </label>
+
+<label class="modeCard emphasis">
+<input type="radio" name="studyMode" value="retryOnly">
+<span>復習ランダム</span>
+<small>未着手と直近不正解だけを出題</small>
+<small>直近で正解済みの問題は出しません</small>
+<small class="modeMeta">今回の追加要件に対応</small>
+<small class="modeBadge">誤答・未学習のみ</small>
+</label>
+
+<label class="modeCard">
+<input type="radio" name="studyMode" value="manual">
+<span>番号で選ぶ</span>
+<small>問題番号順に自由に選んで解けます</small>
+<small>前後移動と番号ジャンプが使えます</small>
+<small class="modeMeta">気になる番号を直接確認したいとき</small>
+<small class="modeBadge">手動選択</small>
+</label>
+</div>
+
+<div id="manualStartBox" class="saveBox inlineStartBox">
+<label for="manualStartNumber">番号指定モードの開始番号</label>
+<input id="manualStartNumber" type="number" min="1" step="1" value="1">
+<p class="subtleText">番号で選ぶモードでは、この番号から開始します。学習中も自由に移動できます。</p>
+</div>
+
+<div class="actionRow">
+<button id="startNewButton" class="primaryButton">最初からはじめる</button>
+<button id="openAnalysisButton" class="ghostButton">分析だけ見る</button>
+<button id="openListButton" class="ghostButton">問題一覧を見る</button>
+</div>
+
+<div class="saveBox">
+<label for="saveInput">つづきから用の保存文字列</label>
+<textarea id="saveInput" rows="6" placeholder="ここに保存文字列を貼り付けます"></textarea>
+<div class="actionRow">
+<button id="resumeButton" class="secondaryButton">つづきから再開</button>
+<button id="sampleLoadButton" class="ghostButton">入力欄を空にする</button>
+</div>
+<p id="homeMessage" class="subtleText">問題データを読み込み中です。</p>
+</div>
+</section>
+
+<section id="studyScreen" class="panel screen">
+<div class="studyTop">
+<div>
+<p id="modeBadge" class="inlineBadge">通常ランダム</p>
+<h2 id="questionTitle">問題</h2>
+<p id="questionMeta" class="subtleText"></p>
+</div>
+<div class="actionRow compactRow">
+<button id="showListButton" class="ghostButton">一覧</button>
+<button id="showAnalysisButton" class="ghostButton">分析</button>
+<button id="backHomeButton" class="ghostButton">ホーム</button>
+<button id="exportSaveButton" class="secondaryButton">保存文字列を出力</button>
+</div>
+</div>
+
+<div id="manualControls" class="manualControls">
+<button id="prevQuestionButton" class="ghostButton">前の番号</button>
+<label class="manualJumpLabel" for="questionSelect">問題番号</label>
+<select id="questionSelect"></select>
+<button id="jumpQuestionButton" class="secondaryButton">この番号へ移動</button>
+<button id="nextQuestionButtonTop" class="ghostButton">次の番号</button>
+</div>
+
+<div class="statusGrid">
+<div class="miniPanel">
+<strong id="progressValue">0 / 0</strong>
+<span>学習済み</span>
+</div>
+<div class="miniPanel">
+<strong id="accuracyValue">0%</strong>
+<span>全体正答率</span>
+</div>
+<div class="miniPanel">
+<strong id="wrongValue">0</strong>
+<span>直近不正解</span>
+</div>
+<div class="miniPanel">
+<strong id="remainingValue">0</strong>
+<span>現在モードの残り候補</span>
+</div>
+</div>
+
+<article class="questionCard">
+<p id="questionCategory" class="categoryPill">分類</p>
+<p id="questionText" class="questionText">出題準備中...</p>
+<div id="choicesBox" class="choicesBox"></div>
+<div id="answerFeedback" class="feedbackBox"></div>
+<div id="attemptHistory" class="historyBox"></div>
+</article>
+
+<div class="saveBox">
+<label for="saveOutput">現在の保存文字列</label>
+<textarea id="saveOutput" rows="5" readonly placeholder="ここに保存文字列が出力されます"></textarea>
+<p class="subtleText">文字列をコピーしておけば、別の端末でもつづきから再開できます。</p>
+</div>
+</section>
+
+<section id="analysisScreen" class="panel screen">
+<div class="sectionHead analysisHead">
+<div>
+<h2>分析</h2>
+<p>分類別の解答数と正答率を確認できます。</p>
+</div>
+<div class="actionRow compactRow">
+<button id="analysisOpenListButton" class="ghostButton">一覧</button>
+<button id="analysisBackStudyButton" class="ghostButton">学習へ戻る</button>
+<button id="analysisBackHomeButton" class="ghostButton">ホーム</button>
+</div>
+</div>
+
+<div class="analysisGrid">
+<div class="chartPanel">
+<h3>分類別レーダー</h3>
+<svg id="radarChart" viewBox="0 0 360 360" aria-label="分類別レーダーチャート"></svg>
+<div class="legendRow">
+<span><i class="legendDot solvedDot"></i>解答数比率</span>
+<span><i class="legendDot accuracyDot"></i>正答率</span>
+</div>
+</div>
+
+<div class="chartPanel">
+<h3>分類別一覧</h3>
+<div id="categoryTable" class="tableLike"></div>
+<h3>直近不正解一覧</h3>
+<div id="wrongList" class="wrongList"></div>
+</div>
+</div>
+</section>
+
+<section id="listScreen" class="panel screen">
+<div class="sectionHead analysisHead">
+<div>
+<h2>問題一覧</h2>
+<p>番号とジャンル、直近の正解日と不正解日を一覧で確認できます。</p>
+</div>
+<div class="actionRow compactRow">
+<button id="listBackStudyButton" class="ghostButton">学習へ戻る</button>
+<button id="listOpenAnalysisButton" class="ghostButton">分析</button>
+<button id="listBackHomeButton" class="ghostButton">ホーム</button>
+</div>
+</div>
+
+<div class="listSummaryRow">
+<div class="miniPanel compactMiniPanel">
+<strong id="listSolvedCount">0</strong>
+<span>直近正解で落ち着いた問題</span>
+</div>
+<div class="miniPanel compactMiniPanel">
+<strong id="listWrongCount">0</strong>
+<span>直近不正解の問題</span>
+</div>
+<div class="miniPanel compactMiniPanel">
+<strong id="listUntouchedCount">0</strong>
+<span>未着手の問題</span>
+</div>
+</div>
+
+<div class="listPanel">
+<div class="listHeaderRow">
+<span>番号</span>
+<span>ジャンル</span>
+<span>直近の正解日</span>
+<span>直近の不正解日</span>
+<span>最新状況</span>
+</div>
+<div id="problemListTable" class="problemListTable"></div>
+</div>
+</section>
+
+</main>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>
