@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>ぴよちゃんの もぐもぐ えほん</title>
+	<style>
+		:root {
+			--bg1: #fff8d6;
+			--bg2: #ffd9c2;
+			--ink: #2f2a24;
+			--card: rgba(255, 255, 255, 0.8);
+			--accent: #ff7b54;
+			--accent-soft: #ffb26b;
+			--ok: #5ca15c;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: grid;
+			place-items: center;
+			font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic UI", sans-serif;
+			color: var(--ink);
+			background:
+				radial-gradient(circle at 15% 20%, #ffffffa8 0%, #ffffff00 45%),
+				radial-gradient(circle at 80% 80%, #ffe6cc 0%, #ffe6cc00 40%),
+				linear-gradient(135deg, var(--bg1), var(--bg2));
+			overflow: hidden;
+		}
+
+		.float-shape {
+			position: fixed;
+			border-radius: 50%;
+			opacity: 0.25;
+			filter: blur(2px);
+			animation: drift 8s ease-in-out infinite;
+			pointer-events: none;
+		}
+
+		.s1 { width: 180px; height: 180px; background: #ffc36b; top: 7vh; left: 8vw; }
+		.s2 { width: 140px; height: 140px; background: #7ad8c2; bottom: 12vh; right: 10vw; animation-delay: -3s; }
+		.s3 { width: 90px; height: 90px; background: #ff9ab2; top: 18vh; right: 18vw; animation-delay: -5s; }
+
+		@keyframes drift {
+			0%, 100% { transform: translateY(0) translateX(0); }
+			50% { transform: translateY(-12px) translateX(8px); }
+		}
+
+		.book {
+			width: min(92vw, 760px);
+			background: var(--card);
+			border: 2px solid #ffffff;
+			border-radius: 28px;
+			box-shadow: 0 20px 40px #0000001f;
+			backdrop-filter: blur(6px);
+			overflow: hidden;
+			animation: pop-in 500ms ease;
+		}
+
+		@keyframes pop-in {
+			from { transform: translateY(14px) scale(0.98); opacity: 0; }
+			to { transform: translateY(0) scale(1); opacity: 1; }
+		}
+
+		.head {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 14px 18px;
+			background: linear-gradient(90deg, #ffffffcc, #fff3e7);
+			border-bottom: 1px solid #00000011;
+			font-size: 0.96rem;
+			font-weight: 700;
+		}
+
+		.badge {
+			background: #fff;
+			border: 1px solid #00000012;
+			border-radius: 999px;
+			padding: 6px 12px;
+			font-size: 0.86rem;
+		}
+
+		.page {
+			min-height: 420px;
+			display: grid;
+			grid-template-columns: 1fr;
+			align-items: center;
+			justify-items: center;
+			text-align: center;
+			padding: 22px 20px 28px;
+			transition: background 500ms ease;
+		}
+
+		.emoji {
+			font-size: clamp(4rem, 12vw, 7rem);
+			line-height: 1;
+			margin-bottom: 10px;
+			animation: bounce 1.4s ease-in-out infinite;
+			filter: drop-shadow(0 8px 10px #0000001f);
+		}
+
+		@keyframes bounce {
+			0%, 100% { transform: translateY(0); }
+			50% { transform: translateY(-8px); }
+		}
+
+		.title {
+			margin: 4px 0 10px;
+			font-size: clamp(1.4rem, 4vw, 2rem);
+		}
+
+		.text {
+			margin: 0;
+			max-width: 24ch;
+			font-size: clamp(1.08rem, 2.8vw, 1.45rem);
+			line-height: 1.75;
+			font-weight: 600;
+		}
+
+		.dots {
+			display: flex;
+			gap: 8px;
+			justify-content: center;
+			padding: 0 0 16px;
+		}
+
+		.dot {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #00000022;
+			transition: transform 180ms ease, background 180ms ease;
+		}
+
+		.dot.active {
+			background: var(--accent);
+			transform: scale(1.3);
+		}
+
+		.controls {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			padding: 0 16px 20px;
+		}
+
+		button {
+			border: 0;
+			border-radius: 14px;
+			padding: 10px 18px;
+			font: inherit;
+			font-weight: 700;
+			cursor: pointer;
+		}
+
+		.start-btn {
+			background: var(--accent);
+			color: #fff;
+			box-shadow: 0 8px 16px #ff7b544d;
+		}
+
+		.restart-btn {
+			background: #fff;
+			color: var(--ink);
+			border: 1px solid #0000001a;
+		}
+
+		.status {
+			text-align: center;
+			padding: 0 16px 18px;
+			font-size: 0.9rem;
+			color: #4f473f;
+			min-height: 1.2rem;
+		}
+
+		@media (max-width: 540px) {
+			.page {
+				min-height: 380px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="float-shape s1"></div>
+	<div class="float-shape s2"></div>
+	<div class="float-shape s3"></div>
+
+	<main class="book" aria-live="polite">
+		<header class="head">
+			<div>ぴよちゃんの もぐもぐ えほん</div>
+			<div class="badge" id="pageCounter">1 / 5</div>
+		</header>
+
+		<section class="page" id="page" style="background: #fff7dc;">
+			<div class="emoji" id="emoji" aria-hidden="true">🐥</div>
+			<h1 class="title" id="title">あさの ぴよちゃん</h1>
+			<p class="text" id="text">おなかが ぐう〜。<br>「もぐもぐ したいな！」</p>
+		</section>
+
+		<div class="dots" id="dots" aria-label="ページインジケーター"></div>
+
+		<div class="controls">
+			<button class="start-btn" id="startBtn">よみきかせ スタート</button>
+			<button class="restart-btn" id="restartBtn" type="button">さいしょ から</button>
+		</div>
+		<div class="status" id="status">ボタンをおすと、おんせいで よみます。</div>
+	</main>
+
+	<script>
+		const pages = [
+			{
+				title: "あさの ぴよちゃん",
+				text: "おなかが ぐう〜。\n「もぐもぐ したいな！」",
+				emoji: "🐥",
+				bg: "#fff7dc"
+			},
+			{
+				title: "いちご ぱくっ",
+				text: "あかい いちごを ひとつ。\nぱくっ！ まだ ぺこぺこ。",
+				emoji: "🐥🍓",
+				bg: "#ffe9ef"
+			},
+			{
+				title: "ばなな もぐもぐ",
+				text: "きいろい ばななを ふたつ。\nもぐもぐ！ にこにこ。",
+				emoji: "🐥🍌🍌",
+				bg: "#fff3c9"
+			},
+			{
+				title: "にんじん スープ",
+				text: "あったか すーぷを すこし。\nふーふー、こくん。",
+				emoji: "🐥🥕🥣",
+				bg: "#ffe7d3"
+			},
+			{
+				title: "おつきさま おやすみ",
+				text: "おなか いっぱい。\nおつきさまに「おやすみなさい」。",
+				emoji: "🐥🌙✨",
+				bg: "#e7ecff"
+			}
+		];
+
+		const pageEl = document.getElementById("page");
+		const emojiEl = document.getElementById("emoji");
+		const titleEl = document.getElementById("title");
+		const textEl = document.getElementById("text");
+		const pageCounterEl = document.getElementById("pageCounter");
+		const dotsEl = document.getElementById("dots");
+		const statusEl = document.getElementById("status");
+		const startBtn = document.getElementById("startBtn");
+		const restartBtn = document.getElementById("restartBtn");
+
+		let pageIndex = 0;
+		let started = false;
+		let autoTimer = null;
+
+		const synth = window.speechSynthesis;
+
+		function createDots() {
+			dotsEl.innerHTML = "";
+			pages.forEach((_, i) => {
+				const dot = document.createElement("span");
+				dot.className = "dot" + (i === pageIndex ? " active" : "");
+				dotsEl.appendChild(dot);
+			});
+		}
+
+		function renderPage() {
+			const p = pages[pageIndex];
+			pageEl.style.background = p.bg;
+			emojiEl.textContent = p.emoji;
+			titleEl.textContent = p.title;
+			textEl.innerHTML = p.text.replace(/\n/g, "<br>");
+			pageCounterEl.textContent = `${pageIndex + 1} / ${pages.length}`;
+
+			[...dotsEl.children].forEach((d, i) => {
+				d.classList.toggle("active", i === pageIndex);
+			});
+		}
+
+		function pickJapaneseVoice() {
+			const voices = synth.getVoices();
+			if (!voices || voices.length === 0) {
+				return null;
+			}
+			return voices.find(v => v.lang === "ja-JP") || voices.find(v => v.lang.startsWith("ja")) || null;
+		}
+
+		function scheduleNextPage(delayMs) {
+			clearTimeout(autoTimer);
+			autoTimer = setTimeout(() => {
+				if (pageIndex < pages.length - 1) {
+					pageIndex += 1;
+					renderPage();
+					speakCurrentPage();
+				} else {
+					started = false;
+					statusEl.textContent = "おしまい。もういちど きくときは『さいしょから』をおしてね。";
+					startBtn.textContent = "もういちど じどう よみ";
+				}
+			}, delayMs);
+		}
+
+		function speakCurrentPage() {
+			const p = pages[pageIndex];
+			const speech = `${p.title}。 ${p.text.replace(/\n/g, " ")}`;
+
+			if (!synth) {
+				statusEl.textContent = "このブラウザは おんせい よみあげ に たいおうしていません。";
+				scheduleNextPage(2500);
+				return;
+			}
+
+			synth.cancel();
+
+			const utter = new SpeechSynthesisUtterance(speech);
+			const voice = pickJapaneseVoice();
+			if (voice) {
+				utter.voice = voice;
+			}
+
+			utter.lang = "ja-JP";
+			utter.rate = 0.9;
+			utter.pitch = 1.2;
+			utter.volume = 1;
+
+			utter.onstart = () => {
+				statusEl.textContent = "よみあげちゅう... つぎのページへ じどうで すすみます。";
+			};
+
+			utter.onend = () => {
+				scheduleNextPage(1200);
+			};
+
+			utter.onerror = () => {
+				statusEl.textContent = "おんせいが うまく ならなかったので、じどうで すすみます。";
+				scheduleNextPage(1800);
+			};
+
+			// Fallback: 端末によってonendが発火しないケースに備えて自動進行を予約
+			const fallbackDelay = Math.max(2800, speech.length * 220);
+			scheduleNextPage(fallbackDelay);
+			synth.speak(utter);
+		}
+
+		function startStory(fromBeginning = false) {
+			if (fromBeginning) {
+				pageIndex = 0;
+			}
+			started = true;
+			startBtn.textContent = "よみなおし";
+			renderPage();
+			speakCurrentPage();
+		}
+
+		startBtn.addEventListener("click", () => {
+			startStory(true);
+		});
+
+		restartBtn.addEventListener("click", () => {
+			clearTimeout(autoTimer);
+			synth.cancel();
+			startStory(true);
+		});
+
+		window.addEventListener("beforeunload", () => {
+			clearTimeout(autoTimer);
+			if (synth) {
+				synth.cancel();
+			}
+		});
+
+		// 音声リストは非同期で取得されるため、読み込み後に再取得できるようにする
+		if (synth && typeof synth.onvoiceschanged !== "undefined") {
+			synth.onvoiceschanged = () => {
+				pickJapaneseVoice();
+			};
+		}
+
+		createDots();
+		renderPage();
+	</script>
+</body>
+</html>
