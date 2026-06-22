@@ -1,0 +1,3043 @@
+{
+  "schema_version": "1.0",
+  "created_for": "診断士ダッシュボード別ページ用 事例IV 問題カード",
+  "created_at": "2026-06-22",
+  "exam": "中小企業診断士 二次試験 事例IV",
+  "sources": [
+    {
+      "source_id": "strategy_guide",
+      "name": "攻略マスターガイド(1).pdf",
+      "workspace_path": "/workspace/.cache/1.攻略マスターガイド(1).pdf",
+      "pages": 184
+    },
+    {
+      "source_id": "past_guide",
+      "name": "過去問マスターガイド(1).pdf",
+      "workspace_path": "/workspace/.cache/2.過去問マスターガイド(1).pdf",
+      "pages": 282
+    }
+  ],
+  "dashboard_suggestion": {
+    "page_name": "case4-cards.html",
+    "primary_views": [
+      "今日やるカード",
+      "論点別カード",
+      "難易度別カード",
+      "間違いカード"
+    ],
+    "recommended_filters": [
+      "topic",
+      "difficulty",
+      "year",
+      "status_default"
+    ],
+    "recommended_daily_flow": [
+      "経営分析1枚",
+      "CVPまたはNPV1枚",
+      "気付き3手順を音読",
+      "間違い理由を1つ記録"
+    ]
+  },
+  "cards": [
+    {
+      "id": "sg-ea-01",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 34,
+      "difficulty": "★",
+      "time_limit_minutes": 5,
+      "score": null,
+      "title": "経営分析 練習問題①",
+      "problem_summary": "基本指標を短時間で計算し、収益性・安全性・効率性の見方を確認する。",
+      "specific_hook": "まず5分で指標名と式が出るかを見る基礎カード。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-ea-02",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 36,
+      "difficulty": "★",
+      "time_limit_minutes": 5,
+      "score": null,
+      "title": "経営分析 練習問題②",
+      "problem_summary": "短期安全性と長期安全性の違いを見分ける練習。",
+      "specific_hook": "当座・流動・自己資本比率の役割を分ける。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-ea-03",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 38,
+      "difficulty": "★★★",
+      "time_limit_minutes": 5,
+      "score": null,
+      "title": "経営分析 練習問題③",
+      "problem_summary": "複数候補から課題指標を選ぶ練習。",
+      "specific_hook": "似た指標を並べず、根拠が書けるものを選ぶ。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-ea-04",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 40,
+      "difficulty": "★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "経営分析 問題④",
+      "problem_summary": "財務諸表と同業他社比較から、D社の問題指標を3つ選ぶ。",
+      "specific_hook": "定番3分類をバランスよく拾う。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-ea-05",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 42,
+      "difficulty": "★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "経営分析 問題⑤",
+      "problem_summary": "同業他社比較で、指標名・数値・記述をまとめる。",
+      "specific_hook": "差が大きいだけでなく原因説明できる指標を採る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-ea-06",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 44,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "経営分析 問題⑥",
+      "problem_summary": "問題指標3つと要因記述をつなげる。",
+      "specific_hook": "後続問題の課題設定につながる指標を疑う。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-ea-07",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 46,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "経営分析 問題⑦",
+      "problem_summary": "規模や個人事業主的なブレがある財務諸表を読む。",
+      "specific_hook": "精密計算より、財務的特徴の方向性を外さない。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-ea-08",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 48,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "経営分析 問題⑧",
+      "problem_summary": "収益性に絞った分析。総利益率と営業利益率の違いを見る。",
+      "specific_hook": "総利益率が良くても販管費で落ちていないかを見る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-ea-09",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 50,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "経営分析 問題⑨",
+      "problem_summary": "前期比較による経営分析。変化の原因を読む。",
+      "specific_hook": "他社比較ではなく時系列比較の設問だと気付く。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-ea-10",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": null,
+      "question_no": null,
+      "page": 52,
+      "difficulty": "★★★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "経営分析 問題⑩",
+      "problem_summary": "効率性と生産性を比較して説明する高難度問題。",
+      "specific_hook": "有形固定資産回転率と労働生産性の違いを分ける。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-01",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 72,
+      "difficulty": "★",
+      "time_limit_minutes": 5,
+      "score": null,
+      "title": "CVP 問題①",
+      "problem_summary": "売上・変動費・固定費から基本的な損益分岐点を求める。",
+      "specific_hook": "基本式に代入できるかだけを確認する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-02",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 74,
+      "difficulty": "★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "CVP 問題②",
+      "problem_summary": "損益分岐点売上高や安全余裕率を計算する。",
+      "specific_hook": "問われている指標がBEPそのものか比率かを見る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-03",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 76,
+      "difficulty": "★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "CVP 問題③",
+      "problem_summary": "複数設問が連鎖するCVP問題。",
+      "specific_hook": "設問1の変動費率を後続に使う前提で慎重に処理する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-04",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 79,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 20,
+      "score": null,
+      "title": "CVP 問題④",
+      "problem_summary": "条件変更後の損益分岐点や利益を求める。",
+      "specific_hook": "固定費削減・変動費率変化のどちらが効くかを分ける。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-05",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 82,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "CVP 問題⑤",
+      "problem_summary": "調達価格や製品条件の変更を反映してCVPを組む。",
+      "specific_hook": "前期の数値をそのまま使ってよい部分と変える部分を分ける。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-06",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 85,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "CVP 問題⑥",
+      "problem_summary": "製造原価情報から固変分解してCVP分析する。",
+      "specific_hook": "原価項目が変動費か固定費かを最初に分類する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-07",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 87,
+      "difficulty": "★★★",
+      "time_limit_minutes": 10,
+      "score": null,
+      "title": "CVP 問題⑦",
+      "problem_summary": "稼働時間とコストの関係から総費用線を使う。",
+      "specific_hook": "グラフ線や連立方程式で固定費・変動費を推定する型。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-08",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 89,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 20,
+      "score": null,
+      "title": "CVP 問題⑧",
+      "problem_summary": "複数データから必要情報を拾い、損益分岐点を組み立てる。",
+      "specific_hook": "余分な情報に飲まれず、不明項目以外の数値を探す。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-09",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 92,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "CVP 問題⑨",
+      "problem_summary": "製品ミックスと制約条件下で利益最大化を考える。",
+      "specific_hook": "制約条件がある時点で、単純なBEPではなくミックス問題と見る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-cvp-10",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": null,
+      "question_no": null,
+      "page": 95,
+      "difficulty": "★★★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "CVP 問題⑩",
+      "problem_summary": "高難度のCVP応用。利益構造を式に落とす。",
+      "specific_hook": "難しさは式構築の障壁。条件を分解してから式にする。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★★★",
+        "",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-oda-01",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "ODA",
+      "subtype": "内外製",
+      "year": null,
+      "question_no": null,
+      "page": 110,
+      "difficulty": "★",
+      "time_limit_minutes": 5,
+      "score": null,
+      "title": "ODA 問題①",
+      "problem_summary": "内製か外注かを、埋没原価を除いて1個当たり原価で判断する。",
+      "specific_hook": "外注しても発生する労務費・固定費は意思決定から外す。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "短期の意思決定問題かを見る。選択肢A/Bで差が出る費用だけを拾う。",
+          "action": "埋没原価を除外し、実際原価・機会原価・差額収益を並べる。"
+        },
+        {
+          "step": 2,
+          "notice": "内外製、撤退、特別価格、追加加工のどの型かを判定する。",
+          "action": "貢献利益、管理可能利益、追加加工後利益など型に合う利益で比較する。"
+        },
+        {
+          "step": 3,
+          "notice": "定量判断の前提として、余剰能力・他製品への影響・共通固定費配賦の扱いを確認する。",
+          "action": "最終判断は「採用/不採用」と理由を1文で書ける形にする。"
+        }
+      ],
+      "dashboard_tags": [
+        "ODA",
+        "★",
+        "",
+        "内外製"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-oda-02",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "ODA",
+      "subtype": "内外製",
+      "year": null,
+      "question_no": null,
+      "page": 112,
+      "difficulty": "★★★",
+      "time_limit_minutes": 10,
+      "score": null,
+      "title": "ODA 問題②",
+      "problem_summary": "外注や別用途活用を含めた差額原価で判断する。",
+      "specific_hook": "機会原価があるかを必ず見る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "短期の意思決定問題かを見る。選択肢A/Bで差が出る費用だけを拾う。",
+          "action": "埋没原価を除外し、実際原価・機会原価・差額収益を並べる。"
+        },
+        {
+          "step": 2,
+          "notice": "内外製、撤退、特別価格、追加加工のどの型かを判定する。",
+          "action": "貢献利益、管理可能利益、追加加工後利益など型に合う利益で比較する。"
+        },
+        {
+          "step": 3,
+          "notice": "定量判断の前提として、余剰能力・他製品への影響・共通固定費配賦の扱いを確認する。",
+          "action": "最終判断は「採用/不採用」と理由を1文で書ける形にする。"
+        }
+      ],
+      "dashboard_tags": [
+        "ODA",
+        "★★★",
+        "",
+        "内外製"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-oda-03",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "ODA",
+      "subtype": "撤退判断",
+      "year": null,
+      "question_no": null,
+      "page": 114,
+      "difficulty": "★★",
+      "time_limit_minutes": 10,
+      "score": null,
+      "title": "ODA 問題③",
+      "problem_summary": "赤字店舗や事業を閉鎖すべきか、貢献利益で判断する。",
+      "specific_hook": "営業利益ではなく共通固定費控除前を見る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "短期の意思決定問題かを見る。選択肢A/Bで差が出る費用だけを拾う。",
+          "action": "埋没原価を除外し、実際原価・機会原価・差額収益を並べる。"
+        },
+        {
+          "step": 2,
+          "notice": "内外製、撤退、特別価格、追加加工のどの型かを判定する。",
+          "action": "貢献利益、管理可能利益、追加加工後利益など型に合う利益で比較する。"
+        },
+        {
+          "step": 3,
+          "notice": "定量判断の前提として、余剰能力・他製品への影響・共通固定費配賦の扱いを確認する。",
+          "action": "最終判断は「採用/不採用」と理由を1文で書ける形にする。"
+        }
+      ],
+      "dashboard_tags": [
+        "ODA",
+        "★★",
+        "",
+        "撤退判断"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-oda-04",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "ODA",
+      "subtype": "特別価格",
+      "year": null,
+      "question_no": null,
+      "page": 116,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "ODA 問題④",
+      "problem_summary": "特別価格の受注数量を、余剰能力と他製品の機会損失込みで判断する。",
+      "specific_hook": "単価が下がるほど受注増でも、製品Yの機会利益を失う。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "短期の意思決定問題かを見る。選択肢A/Bで差が出る費用だけを拾う。",
+          "action": "埋没原価を除外し、実際原価・機会原価・差額収益を並べる。"
+        },
+        {
+          "step": 2,
+          "notice": "内外製、撤退、特別価格、追加加工のどの型かを判定する。",
+          "action": "貢献利益、管理可能利益、追加加工後利益など型に合う利益で比較する。"
+        },
+        {
+          "step": 3,
+          "notice": "定量判断の前提として、余剰能力・他製品への影響・共通固定費配賦の扱いを確認する。",
+          "action": "最終判断は「採用/不採用」と理由を1文で書ける形にする。"
+        }
+      ],
+      "dashboard_tags": [
+        "ODA",
+        "★★★",
+        "",
+        "特別価格"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-oda-05",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "ODA",
+      "subtype": "追加加工",
+      "year": null,
+      "question_no": null,
+      "page": 118,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "ODA 問題⑤",
+      "problem_summary": "追加加工して販売すべきかを、歩留まり・追加加工費・追加固定費込みで判断する。",
+      "specific_hook": "ロスしても発生する費用と、販売できる数量を分ける。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "短期の意思決定問題かを見る。選択肢A/Bで差が出る費用だけを拾う。",
+          "action": "埋没原価を除外し、実際原価・機会原価・差額収益を並べる。"
+        },
+        {
+          "step": 2,
+          "notice": "内外製、撤退、特別価格、追加加工のどの型かを判定する。",
+          "action": "貢献利益、管理可能利益、追加加工後利益など型に合う利益で比較する。"
+        },
+        {
+          "step": 3,
+          "notice": "定量判断の前提として、余剰能力・他製品への影響・共通固定費配賦の扱いを確認する。",
+          "action": "最終判断は「採用/不採用」と理由を1文で書ける形にする。"
+        }
+      ],
+      "dashboard_tags": [
+        "ODA",
+        "★★★★",
+        "",
+        "追加加工"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-01",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "基本NPV",
+      "year": null,
+      "question_no": null,
+      "page": 157,
+      "difficulty": "★",
+      "time_limit_minutes": 10,
+      "score": null,
+      "title": "NPV 問題①",
+      "problem_summary": "投資額と毎年CFから基本的なNPVを求める。",
+      "specific_hook": "初期投資は割引せず、将来CFだけ割り引く。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★",
+        "",
+        "基本NPV"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-02",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "投資採否",
+      "year": null,
+      "question_no": null,
+      "page": 159,
+      "difficulty": "★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "NPV 問題②",
+      "problem_summary": "投資案の採否をNPVで判断する。",
+      "specific_hook": "営業利益ではなくCFで見る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★",
+        "",
+        "投資採否"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-03",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "回収期間",
+      "year": null,
+      "question_no": null,
+      "page": 161,
+      "difficulty": "★★",
+      "time_limit_minutes": 10,
+      "score": null,
+      "title": "NPV 問題③",
+      "problem_summary": "回収期間や投資効果を確認する。",
+      "specific_hook": "単純回収と割引後回収を混同しない。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★",
+        "",
+        "回収期間"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-04",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "税効果",
+      "year": null,
+      "question_no": null,
+      "page": 163,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "NPV 問題④",
+      "problem_summary": "減価償却と税効果を含むNPV計算。",
+      "specific_hook": "減価償却費は費用だが現金支出ではない。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★",
+        "",
+        "税効果"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-05",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "運転資本",
+      "year": null,
+      "question_no": null,
+      "page": 165,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 20,
+      "score": null,
+      "title": "NPV 問題⑤",
+      "problem_summary": "運転資本や残存価額を含む投資計算。",
+      "specific_hook": "在庫・売掛などの回収時点を忘れない。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★",
+        "",
+        "運転資本"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-06",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "期待値",
+      "year": null,
+      "question_no": null,
+      "page": 168,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "NPV 問題⑥",
+      "problem_summary": "令和2年度第2問類題。複数選択肢や期待値を扱う。",
+      "specific_hook": "シナリオ分岐は確率加重してから割り引く。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★",
+        "",
+        "期待値"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-07",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "時系列",
+      "year": null,
+      "question_no": null,
+      "page": 172,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "NPV 問題⑦",
+      "problem_summary": "複数期間の投資CFを整理する。",
+      "specific_hook": "何年目の期首/期末かを線表にしないと崩れる。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★",
+        "",
+        "時系列"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-08",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "高難度",
+      "year": null,
+      "question_no": null,
+      "page": 174,
+      "difficulty": "★★★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "NPV 問題⑧",
+      "problem_summary": "高難度の投資判断。条件をフレームで拾う。",
+      "specific_hook": "長文を読むのではなく、NPVに必要な箱を埋める。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★★",
+        "",
+        "高難度"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-09",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "補助金",
+      "year": null,
+      "question_no": null,
+      "page": 177,
+      "difficulty": "★★★★★",
+      "time_limit_minutes": 30,
+      "score": null,
+      "title": "NPV 問題⑨",
+      "problem_summary": "補助金や圧縮記帳を含む投資計算。",
+      "specific_hook": "補助金の税影響と減価償却費の変化を分ける。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★★",
+        "",
+        "補助金"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "sg-npv-10",
+      "source_id": "strategy_guide",
+      "source_name": "攻略マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "反復投資",
+      "year": null,
+      "question_no": null,
+      "page": 180,
+      "difficulty": "★★★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "NPV 問題⑩",
+      "problem_summary": "新品機Aと中古機Bの反復投資を同期間で比較する。",
+      "specific_hook": "耐用年数が違う投資案は最小公倍数の期間で揃える。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★★",
+        "",
+        "反復投資"
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-ea-r01",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "R01",
+      "question_no": null,
+      "page": 17,
+      "difficulty": "★★★",
+      "time_limit_minutes": 20,
+      "score": null,
+      "title": "経営分析① R01年度",
+      "problem_summary": "オーソドックスな経営分析。BS/PLから特徴と変化を説明する。",
+      "specific_hook": "在庫の問題は効率性だけでなく短期安全性にも効く。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★",
+        "R01",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-ea-h29",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "H29",
+      "question_no": null,
+      "page": 25,
+      "difficulty": "★★★",
+      "time_limit_minutes": 20,
+      "score": null,
+      "title": "経営分析② H29年度",
+      "problem_summary": "財務的な課題と強みを同業他社比較で評価する。",
+      "specific_hook": "経常利益率を選ぶのは営業外損失が論点になる時。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★",
+        "H29",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-ea-r03",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "R03",
+      "question_no": null,
+      "page": 33,
+      "difficulty": "★★★",
+      "time_limit_minutes": 20,
+      "score": null,
+      "title": "経営分析③ R03年度",
+      "problem_summary": "指標を2つ選ぶ形で、財務的特徴を読み取る。",
+      "specific_hook": "総利益率と営業利益率の差で販管費問題を疑う。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★",
+        "R03",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-ea-r05",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "R05",
+      "question_no": null,
+      "page": 41,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "経営分析④ R05年度",
+      "problem_summary": "悪化2つ・改善1つを選び、営業利益率悪化要因を説明する。",
+      "specific_hook": "原材料高騰など将来予想は比較対象期間の原因にしない。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★",
+        "R05",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-ea-h27",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "H27",
+      "question_no": null,
+      "page": 49,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 20,
+      "score": null,
+      "title": "経営分析⑤ H27年度",
+      "problem_summary": "安全性以外の差が見えにくい難問。",
+      "specific_hook": "安全性から2つ選ぶ発想を許容する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★★",
+        "H27",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-cvp-r01",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": "R01",
+      "question_no": null,
+      "page": 62,
+      "difficulty": "★★",
+      "time_limit_minutes": 20,
+      "score": null,
+      "title": "CVP① R01年度",
+      "problem_summary": "事業部別・全社別に変動費率とBEPを求める。",
+      "specific_hook": "利益率の違う事業部をまとめて分析しない。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★",
+        "R01",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-cvp-h29",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": "H29",
+      "question_no": null,
+      "page": 69,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "CVP② H29年度",
+      "problem_summary": "予想損益計算書、営業利益、損益分岐単価を求める。",
+      "specific_hook": "隠し条件を疑いすぎず、整合する素直な解釈を選ぶ。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "H29",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-cvp-h27",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": "H27",
+      "question_no": null,
+      "page": 76,
+      "difficulty": "★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "CVP③ H27年度",
+      "problem_summary": "予想PLと赤字転落の原因、X3期のCVPを扱う。",
+      "specific_hook": "売上減少で限界利益が固定費を賄えない構造を見る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "H27",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-cvp-r03",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": "R03",
+      "question_no": null,
+      "page": 83,
+      "difficulty": "★★★",
+      "time_limit_minutes": 16,
+      "score": null,
+      "title": "CVP④ R03年度",
+      "problem_summary": "目標利益や価格・数量条件を組み立てる。",
+      "specific_hook": "設問文の条件を式に翻訳する速度が勝負。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "R03",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-cvp-r05",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": "R05",
+      "question_no": null,
+      "page": 89,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "CVP⑤ R05年度",
+      "problem_summary": "セールスミックスと制約条件を扱う。",
+      "specific_hook": "制約条件が2つなら連立方程式で交点を探す。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★★",
+        "R05",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-npv-r01",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "R01",
+      "question_no": null,
+      "page": 103,
+      "difficulty": "★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "NPV① R01年度",
+      "problem_summary": "投資案のNPVを求め、採否を判断する。",
+      "specific_hook": "営業CF、投資CF、残存価額を箱分けする。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★",
+        "R01",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-npv-h27",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "H27",
+      "question_no": null,
+      "page": 110,
+      "difficulty": "★★★",
+      "time_limit_minutes": 21,
+      "score": null,
+      "title": "NPV② H27年度",
+      "problem_summary": "複数設問のNPV問題。時点と増分CFを整理する。",
+      "specific_hook": "設問が進むほど前問の数値を使う。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★",
+        "H27",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-npv-h29",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "H29",
+      "question_no": null,
+      "page": 118,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 23,
+      "score": null,
+      "title": "NPV③ H29年度",
+      "problem_summary": "新規事業の予測損益と投資評価を扱う。",
+      "specific_hook": "予測PLからCFへ変換する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★",
+        "H29",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-npv-r03",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "R03",
+      "question_no": null,
+      "page": 126,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "NPV④ R03年度",
+      "problem_summary": "投資案の比較と不確実性を扱う。",
+      "specific_hook": "複数案は差額CFで比べると楽になる。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★",
+        "R03",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-npv-r05",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "R05",
+      "question_no": null,
+      "page": 134,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 25,
+      "score": null,
+      "title": "NPV⑤ R05年度",
+      "problem_summary": "高難度の最新過去問NPV。",
+      "specific_hook": "長文から必要なCF要素だけを抜く。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★",
+        "R05",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-desc-h27",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "H27",
+      "question_no": null,
+      "page": 146,
+      "difficulty": "★",
+      "time_limit_minutes": 10,
+      "score": null,
+      "title": "記述問題① H27年度",
+      "problem_summary": "財務・会計上の短い説明問題。",
+      "specific_hook": "言葉の定義を短文で正確に書く。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★",
+        "H27",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-desc-r01",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "R01",
+      "question_no": null,
+      "page": 151,
+      "difficulty": "★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "記述問題② R01年度",
+      "problem_summary": "投資やリスクに関する記述。",
+      "specific_hook": "計算結果と経営助言を接続する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★★",
+        "R01",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-desc-r03",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "R03",
+      "question_no": null,
+      "page": 157,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "記述問題③ R03年度",
+      "problem_summary": "ネット販売など新施策の財務的論点を述べる。",
+      "specific_hook": "メリット/リスク/対応策をセットにする。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★★★",
+        "R03",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-desc-r05",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "R05",
+      "question_no": null,
+      "page": 162,
+      "difficulty": "★★★",
+      "time_limit_minutes": 15,
+      "score": null,
+      "title": "記述問題④ R05年度",
+      "problem_summary": "自社製造や新規施策に関する財務的検討。",
+      "specific_hook": "数字で出た弱点と記述をつなぐ。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★★★",
+        "R05",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-desc-h29",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "H29",
+      "question_no": null,
+      "page": 167,
+      "difficulty": "★★★★",
+      "time_limit_minutes": 20,
+      "score": null,
+      "title": "記述問題⑤ H29年度",
+      "problem_summary": "買収・子会社化などの記述問題。",
+      "specific_hook": "のれん、買収価格、DD、シナジーを疑う。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★★★★",
+        "H29",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h26-q1",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "H26",
+      "question_no": "第1問",
+      "page": 174,
+      "difficulty": "★★",
+      "time_limit_minutes": null,
+      "score": 24,
+      "title": "H26年度 第1問 経営分析",
+      "problem_summary": "経営分析で第1問の基礎得点を取りに行く。",
+      "specific_hook": "財政状態と経営成績を分けて指標選択する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★",
+        "H26",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h26-q2",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "H26",
+      "question_no": "第2問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 30,
+      "title": "H26年度 第2問 NPV",
+      "problem_summary": "投資案のNPVを求める。",
+      "specific_hook": "投資時点と年末CFを線表化する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★",
+        "H26",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h26-q3",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": "H26",
+      "question_no": "第3問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 30,
+      "title": "H26年度 第3問 CVP",
+      "problem_summary": "CVPで利益計算と損益分岐点を扱う。",
+      "specific_hook": "基本式に戻して設問ごとに未知数を置く。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "H26",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h26-q4",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "H26",
+      "question_no": "第4問",
+      "page": null,
+      "difficulty": "★★",
+      "time_limit_minutes": null,
+      "score": 16,
+      "title": "H26年度 第4問 記述問題",
+      "problem_summary": "為替リスクの軽減に関する記述。",
+      "specific_hook": "為替予約などリスクヘッジ手段を想起する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★★",
+        "H26",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h28-q1",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "H28",
+      "question_no": "第1問",
+      "page": 196,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 25,
+      "title": "H28年度 第1問 経営分析",
+      "problem_summary": "経営分析。強み弱みと要因をまとめる。",
+      "specific_hook": "指標と与件の因果を短くつなぐ。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★",
+        "H28",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h28-q2",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "H28",
+      "question_no": "第2問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 35,
+      "title": "H28年度 第2問 NPV",
+      "problem_summary": "投資評価のNPV問題。",
+      "specific_hook": "減価償却と税効果を落とさない。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★",
+        "H28",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h28-q3",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "H28",
+      "question_no": "第3問",
+      "page": null,
+      "difficulty": "★",
+      "time_limit_minutes": null,
+      "score": 15,
+      "title": "H28年度 第3問 記述問題",
+      "problem_summary": "貢献利益に関する記述。",
+      "specific_hook": "限界利益、個別固定費、共通固定費の違いを見る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★",
+        "H28",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h28-q4",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": "H28",
+      "question_no": "第4問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 25,
+      "title": "H28年度 第4問 CVP",
+      "problem_summary": "CVP計算。",
+      "specific_hook": "設問ごとの条件変更を表にする。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "H28",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h30-q1",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "H30",
+      "question_no": "第1問",
+      "page": 217,
+      "difficulty": "★★",
+      "time_limit_minutes": null,
+      "score": 24,
+      "title": "H30年度 第1問 経営分析",
+      "problem_summary": "与件を読む前でも指標候補が濃厚な経営分析。",
+      "specific_hook": "有形固定資産回転率など差が明確な指標を拾う。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★",
+        "H30",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h30-q2",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "H30",
+      "question_no": "第2問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 31,
+      "title": "H30年度 第2問 NPV",
+      "problem_summary": "NPV投資評価。",
+      "specific_hook": "初期投資、営業CF、残存価額の箱を作る。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★",
+        "H30",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h30-q3",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": "H30",
+      "question_no": "第3問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 30,
+      "title": "H30年度 第3問 CVP",
+      "problem_summary": "費用内訳から固変分解してCVPを行う。",
+      "specific_hook": "第1問PLの費用内訳がヒントになる。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "H30",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-h30-q4",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "H30",
+      "question_no": "第4問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 15,
+      "title": "H30年度 第4問 記述問題",
+      "problem_summary": "業務委託の悪影響と対策を述べる。",
+      "specific_hook": "全国展開で管理限界が来ると考える。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★★★",
+        "H30",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-r02-q1",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "R02",
+      "question_no": "第1問",
+      "page": 238,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 25,
+      "title": "R02年度 第1問 経営分析",
+      "problem_summary": "財政状態と経営成績の特徴を述べる。",
+      "specific_hook": "BSは安全性、PLは収益性として指標を選ぶ。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★",
+        "R02",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-r02-q2",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "R02",
+      "question_no": "第2問",
+      "page": null,
+      "difficulty": "★★★★",
+      "time_limit_minutes": null,
+      "score": 30,
+      "title": "R02年度 第2問 CVP+NPV",
+      "problem_summary": "CVPとNPVが統合された複合問題。",
+      "specific_hook": "変動費率が段階で変わる点と期待値分岐に気付く。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★",
+        "R02",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-r02-q3",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "R02",
+      "question_no": "第3問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 20,
+      "title": "R02年度 第3問 記述問題",
+      "problem_summary": "負ののれんと買収リスクを述べる。",
+      "specific_hook": "安く買える会社は訳ありと見てDDを想起する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★★★",
+        "R02",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-r02-q4",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "ROI",
+      "subtype": "ROI",
+      "year": "R02",
+      "question_no": "第4問",
+      "page": null,
+      "difficulty": "★★★★",
+      "time_limit_minutes": null,
+      "score": 25,
+      "title": "R02年度 第4問 ROI",
+      "problem_summary": "ROI計算と業績評価上の問題点。",
+      "specific_hook": "事業部ROI低下でも全社ROIが上がるなら部分最適に注意する。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "ROIは「利益/投下資本」であり、ROAやROEと同じ効率性評価の一種だと見る。",
+          "action": "営業利益ベースか経常利益ベースかを確認して分子を決める。"
+        },
+        {
+          "step": 2,
+          "notice": "投資後は利益も資産も同時に動くため、分子分母を別々に更新する。",
+          "action": "減価償却、借入利息、資産残高の扱いを混同しない。"
+        },
+        {
+          "step": 3,
+          "notice": "ROI評価は部分最適を誘発する可能性がある。",
+          "action": "全社ROI、資本コスト、利益額、業態差を評価補助軸として書く。"
+        }
+      ],
+      "dashboard_tags": [
+        "ROI",
+        "★★★★",
+        "R02",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-r04-q1",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "経営分析",
+      "subtype": "経営分析",
+      "year": "R04",
+      "question_no": "第1問",
+      "page": 261,
+      "difficulty": "★★★★",
+      "time_limit_minutes": null,
+      "score": 25,
+      "title": "R04年度 第1問 経営分析",
+      "problem_summary": "生産性指標を含む経営分析。",
+      "specific_hook": "生産性指定がある時点で労働生産性/一人当たり売上高を疑う。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "設問が「優れ/課題」「財政状態/経営成績」「他社比較/前期比較」のどれを求めているかを見る。",
+          "action": "安全性・収益性・効率性・生産性の候補を先に分類する。"
+        },
+        {
+          "step": 2,
+          "notice": "差が大きい指標だけで飛びつかず、設問の個数指定と後続設問の因果に合う指標を選ぶ。",
+          "action": "9指標を軸に、必要なら当座比率・総利益率・営業利益率・生産性を優先候補にする。"
+        },
+        {
+          "step": 3,
+          "notice": "記述は「指標名→財務諸表上の要因→与件/業態上の要因」の順で短くつなぐ。",
+          "action": "原因が薄い指標は捨て、根拠を説明できる指標を採用する。"
+        }
+      ],
+      "dashboard_tags": [
+        "経営分析",
+        "★★★★",
+        "R04",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-r04-q2",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "CVP",
+      "subtype": "CVP",
+      "year": "R04",
+      "question_no": "第2問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 20,
+      "title": "R04年度 第2問 CVP",
+      "problem_summary": "セールスミックスと制約条件のCVP。",
+      "specific_hook": "制約条件2つなら連立方程式、3つ以上なら線形計画法を想起。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "問われている未知数が売上高・販売量・単価・固定費・利益・安全余裕率のどれかを特定する。",
+          "action": "基本式「売上高 - 変動費 - 固定費 = 利益」に置く。"
+        },
+        {
+          "step": 2,
+          "notice": "セグメント別、売上構成比、制約条件、段階的な変動費率など、式を分ける条件を探す。",
+          "action": "一発で解かず、部門別・製品別・期間別に表を作る。"
+        },
+        {
+          "step": 3,
+          "notice": "設問1の数値が後続に連鎖するので、有効数字・単位・丸め指示を確認する。",
+          "action": "計算過程を残し、後続設問では同じ変動費率/限界利益率を使う。"
+        }
+      ],
+      "dashboard_tags": [
+        "CVP",
+        "★★★",
+        "R04",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-r04-q3",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "NPV",
+      "subtype": "NPV",
+      "year": "R04",
+      "question_no": "第3問",
+      "page": null,
+      "difficulty": "★★★★",
+      "time_limit_minutes": null,
+      "score": 35,
+      "title": "R04年度 第3問 NPV",
+      "problem_summary": "中古車事業のNPV。埋没原価、在庫投資、永続価値を含む。",
+      "specific_hook": "問題文を読むのではなく、NPVに必要な情報を拾いに行く。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "投資時点、各年末、終了時点を時系列で並べる。",
+          "action": "期首/期末、何年目から発生するCFかを線表にする。"
+        },
+        {
+          "step": 2,
+          "notice": "利益ではなく増分キャッシュフローを求める問題だと気付く。",
+          "action": "営業CF=(増分営業利益×(1-税率))+減価償却費で、投資・運転資本・残存価額を別枠にする。"
+        },
+        {
+          "step": 3,
+          "notice": "割引対象と割引しない初期投資を分け、回収・永続価値・税調整の有無を見る。",
+          "action": "現在価値合計から初期投資を引き、NPV/IRR/PI/回収期間など設問の評価軸で答える。"
+        }
+      ],
+      "dashboard_tags": [
+        "NPV",
+        "★★★★",
+        "R04",
+        ""
+      ],
+      "status_default": "todo"
+    },
+    {
+      "id": "pg-r04-q4",
+      "source_id": "past_guide",
+      "source_name": "過去問マスターガイド(1).pdf",
+      "topic": "記述問題",
+      "subtype": "記述問題",
+      "year": "R04",
+      "question_no": "第4問",
+      "page": null,
+      "difficulty": "★★★",
+      "time_limit_minutes": null,
+      "score": 20,
+      "title": "R04年度 第4問 記述問題",
+      "problem_summary": "在庫リスクと為替リスクの財務的リスク記述。",
+      "specific_hook": "第1問と第3問の伏線から在庫・為替を拾う。",
+      "solve_steps": [
+        {
+          "step": 1,
+          "notice": "財務的リスク、管理会計、M&A、為替など、計算問題では拾わなかった論点を探す。",
+          "action": "与件文だけでなく前問の計算テーマをヒントとして見る。"
+        },
+        {
+          "step": 2,
+          "notice": "聞かれているのが「リスク」「問題点」「改善策」「評価上の留意点」のどれかを確認する。",
+          "action": "原因と対策をセットで、指定字数に合わせて圧縮する。"
+        },
+        {
+          "step": 3,
+          "notice": "一般論ではなく、D社の数字・業態・設問ストーリーに接続する。",
+          "action": "在庫、為替、資本コスト、全体最適など具体語を入れる。"
+        }
+      ],
+      "dashboard_tags": [
+        "記述問題",
+        "★★★",
+        "R04",
+        ""
+      ],
+      "status_default": "todo"
+    }
+  ]
+}
