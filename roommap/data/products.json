@@ -1,39 +1,62 @@
 {
   "version": 1,
   "updatedAt": "2026-07-01",
-  "description": "写真52枚から作成した収納物・備品リスト。消耗品ではない探し物対策用。",
   "items": [
     {
       "id": "washing_machine",
-      "name": "ドラム式洗濯機",
+      "name": "洗濯機",
       "category": "家電",
       "room": "洗面所",
       "storage": "洗濯機置き場",
-      "memo": "上に物を置きがち。洗濯ネット・衣類置き場のルール化推奨",
-      "photoRefs": [
-        "photos/61723_0.jpg"
+      "place": "洗面所W",
+      "priority": "中",
+      "usageFrequency": "毎日",
+      "memo": "HITACHI BIG DRUM。上に物を置きがちなので一時置き場化に注意。",
+      "photoIds": [
+        "61723_0.jpg"
       ]
     },
     {
-      "id": "folding_laundry_rack",
-      "name": "折りたたみ物干し・洗濯用品",
+      "id": "folding_drying_rack",
+      "name": "折りたたみ物干し",
       "category": "洗濯用品",
       "room": "洗面所",
       "storage": "洗濯機横",
-      "memo": "洗濯機右横に収納",
-      "photoRefs": [
-        "photos/61723_0.jpg"
+      "place": "洗濯機右横の隙間",
+      "priority": "中",
+      "usageFrequency": "週数回",
+      "memo": "隙間収納できている。倒れ防止だけ注意。",
+      "photoIds": [
+        "61723_0.jpg"
       ]
     },
     {
       "id": "umbrella",
       "name": "傘",
-      "category": "玄関用品",
+      "category": "外出用品",
       "room": "玄関",
-      "storage": "玄関収納左",
-      "memo": "長傘複数。傘収納として定位置化済み",
-      "photoRefs": [
-        "photos/61710_0.jpg"
+      "storage": "シューズボックス内",
+      "place": "玄関収納左縦長スペース",
+      "priority": "中",
+      "usageFrequency": "雨天時",
+      "memo": "傘は玄関縦長収納にまとまっている。",
+      "photoIds": [
+        "61710_0.jpg"
+      ]
+    },
+    {
+      "id": "shoes",
+      "name": "靴類",
+      "category": "外出用品",
+      "room": "玄関",
+      "storage": "シューズボックス",
+      "place": "玄関下駄箱",
+      "priority": "中",
+      "usageFrequency": "毎日",
+      "memo": "靴は比較的整理済み。季節外は上段へ。",
+      "photoIds": [
+        "61711_0.jpg",
+        "61712_0.jpg"
       ]
     },
     {
@@ -42,101 +65,156 @@
       "category": "外出用品",
       "room": "玄関",
       "storage": "シューズボックス上段",
-      "memo": "抱っこ紐らしき黒いバッグと同じ棚",
-      "photoRefs": [
-        "photos/61709_0.jpg"
+      "place": "玄関収納上段右",
+      "priority": "低",
+      "usageFrequency": "低頻度",
+      "memo": "上段保管でOK。使用頻度が低い。",
+      "photoIds": [
+        "61709_0.jpg"
       ]
     },
     {
-      "id": "shoes",
-      "name": "靴・サンダル",
-      "category": "玄関用品",
+      "id": "baby_carrier",
+      "name": "抱っこ紐",
+      "category": "子ども用品",
       "room": "玄関",
-      "storage": "シューズボックス",
-      "memo": "大人靴・子ども靴あり",
-      "photoRefs": [
-        "photos/61711_0.jpg"
+      "storage": "玄関収納",
+      "place": "玄関収納上段右",
+      "priority": "中",
+      "usageFrequency": "外出時",
+      "memo": "玄関にあるのは動線として良い。",
+      "photoIds": [
+        "61709_0.jpg"
       ]
     },
     {
       "id": "iron",
       "name": "アイロン",
       "category": "家電",
-      "room": "玄関収納・廊下収納",
-      "storage": "玄関右収納中段",
-      "memo": "アイロン・スチーマー系が同じ棚にある。衣類ケア用品としてまとめる",
-      "photoRefs": [
-        "photos/61712_0.jpg"
+      "room": "玄関・リビング収納",
+      "storage": "玄関横収納",
+      "place": "収納棚下段",
+      "priority": "中",
+      "usageFrequency": "月数回",
+      "memo": "アイロン・スチーマー類は一か所にまとめると良い。",
+      "photoIds": [
+        "61713_0.jpg"
       ]
     },
     {
       "id": "steamer",
       "name": "衣類スチーマー",
       "category": "家電",
-      "room": "玄関収納",
-      "storage": "玄関右収納中段",
-      "memo": "",
-      "photoRefs": [
-        "photos/61712_0.jpg"
+      "room": "玄関・リビング収納",
+      "storage": "玄関横収納",
+      "place": "収納棚下段",
+      "priority": "中",
+      "usageFrequency": "月数回",
+      "memo": "アイロンとセット管理。",
+      "photoIds": [
+        "61713_0.jpg"
       ]
     },
     {
-      "id": "child_toy_kitchen",
-      "name": "子ども用キッチンおもちゃ",
-      "category": "子ども用品",
-      "room": "玄関収納・和室",
-      "storage": "玄関右収納下段",
-      "memo": "大型おもちゃ。使用頻度で和室へ移動検討",
-      "photoRefs": [
-        "photos/61712_0.jpg"
+      "id": "cordless_vacuum",
+      "name": "掃除機／コードレスクリーナー",
+      "category": "掃除用品",
+      "room": "玄関横収納",
+      "storage": "収納棚下段",
+      "place": "収納内下段",
+      "priority": "高",
+      "usageFrequency": "週数回",
+      "memo": "取り出しやすい位置が良い。充電場所を固定。",
+      "photoIds": [
+        "61713_0.jpg"
       ]
     },
     {
-      "id": "aroma_diffuser",
-      "name": "芳香剤・ディフューザー",
+      "id": "printer",
+      "name": "プリンター",
+      "category": "家電",
+      "room": "玄関横収納",
+      "storage": "収納棚下段",
+      "place": "収納棚3段目左",
+      "priority": "低",
+      "usageFrequency": "低頻度",
+      "memo": "使用頻度が低ければ下段でOK。インクも近くに。",
+      "photoIds": [
+        "61713_0.jpg"
+      ]
+    },
+    {
+      "id": "decor_flowers",
+      "name": "ドライフラワー・飾り",
       "category": "インテリア",
-      "room": "玄関・トイレ",
-      "storage": "玄関飾り棚・トイレ棚",
-      "memo": "香り系が複数箇所にある",
-      "photoRefs": [
-        "photos/61713_0.jpg",
-        "photos/61718_0.jpg"
+      "room": "玄関",
+      "storage": "玄関飾り棚",
+      "place": "玄関棚上",
+      "priority": "低",
+      "usageFrequency": "常設",
+      "memo": "飾りは棚上にまとめられている。掃除時の一時避難先を決めると良い。",
+      "photoIds": [
+        "61711_0.jpg",
+        "61712_0.jpg"
       ]
     },
     {
-      "id": "seasonal_decor",
-      "name": "リース・飾り・写真立て",
-      "category": "インテリア",
+      "id": "photo_album_board",
+      "name": "写真ボード・フォトフレーム",
+      "category": "思い出品",
+      "room": "玄関",
+      "storage": "玄関飾り棚",
+      "place": "玄関棚上",
+      "priority": "低",
+      "usageFrequency": "常設",
+      "memo": "記念品。転倒防止だけ注意。",
+      "photoIds": [
+        "61711_0.jpg",
+        "61712_0.jpg"
+      ]
+    },
+    {
+      "id": "seasonal_wreath",
+      "name": "リース・季節飾り",
+      "category": "季節用品",
       "room": "玄関・廊下",
-      "storage": "玄関・廊下床",
-      "memo": "季節飾りは箱を1つ作ると迷わない",
-      "photoRefs": [
-        "photos/61714_0.jpg",
-        "photos/61715_0.jpg"
+      "storage": "廊下・収納",
+      "place": "廊下床・収納内",
+      "priority": "低",
+      "usageFrequency": "季節",
+      "memo": "季節飾り箱を作ると探しやすい。",
+      "photoIds": [
+        "61714_0.jpg"
       ]
     },
     {
-      "id": "bedding",
-      "name": "布団・毛布・寝具",
+      "id": "futon",
+      "name": "布団・毛布",
       "category": "寝具",
-      "room": "和室・押入れ",
-      "storage": "和室押入れ",
-      "memo": "圧縮袋または布団収納袋で整理すると大幅改善",
-      "photoRefs": [
-        "photos/61728_0.jpg",
-        "photos/61729_0.jpg",
-        "photos/61755_0.jpg"
+      "room": "和室・押入",
+      "storage": "押入",
+      "place": "押入中段・上段",
+      "priority": "中",
+      "usageFrequency": "季節",
+      "memo": "圧縮袋または布団収納袋で体積削減。",
+      "photoIds": [
+        "61716_0.jpg",
+        "61720_0.jpg",
+        "61753_0.jpg"
       ]
     },
     {
       "id": "suitcase",
-      "name": "スーツケース",
+      "name": "キャリーケース",
       "category": "旅行用品",
       "room": "和室",
-      "storage": "和室押入れ下段",
-      "memo": "旅行用品として一括管理推奨",
-      "photoRefs": [
-        "photos/61730_0.jpg"
+      "storage": "押入",
+      "place": "押入下段右",
+      "priority": "低",
+      "usageFrequency": "旅行時",
+      "memo": "旅行用品を中にまとめても良い。",
+      "photoIds": [
+        "61730_0.jpg"
       ]
     },
     {
@@ -144,34 +222,121 @@
       "name": "ベビーゲート",
       "category": "子ども用品",
       "room": "和室",
-      "storage": "和室押入れ・洋室",
-      "memo": "使わない時は押入れに立てて保管",
-      "photoRefs": [
-        "photos/61730_0.jpg",
-        "photos/61753_0.jpg"
+      "storage": "押入・和室奥",
+      "place": "押入または和室収納",
+      "priority": "中",
+      "usageFrequency": "必要時",
+      "memo": "使う時期が過ぎたら処分/譲渡候補。",
+      "photoIds": [
+        "61733_0.jpg",
+        "61753_0.jpg"
       ]
     },
     {
-      "id": "joint_mat",
+      "id": "play_mat",
       "name": "ジョイントマット",
       "category": "子ども用品",
-      "room": "和室",
-      "storage": "和室押入れ",
-      "memo": "大型。子ども用品/床用品として分類",
-      "photoRefs": [
-        "photos/61753_0.jpg"
+      "room": "和室・洋室",
+      "storage": "押入",
+      "place": "押入下段",
+      "priority": "中",
+      "usageFrequency": "必要時",
+      "memo": "サイズが大きいので立てて収納が良い。",
+      "photoIds": [
+        "61753_0.jpg"
+      ]
+    },
+    {
+      "id": "child_toys",
+      "name": "子ども用おもちゃ",
+      "category": "子ども用品",
+      "room": "リビング・和室",
+      "storage": "テレビ下・おもちゃ箱・押入",
+      "place": "リビング右側・押入",
+      "priority": "中",
+      "usageFrequency": "毎日",
+      "memo": "絵本・ブロック・人形で箱分け推奨。",
+      "photoIds": [
+        "61738_0.jpg",
+        "61732_0.jpg",
+        "61734_0.jpg"
+      ]
+    },
+    {
+      "id": "child_clothes",
+      "name": "子ども服",
+      "category": "衣類",
+      "room": "洋室・クローゼット",
+      "storage": "ワゴン・クローゼット",
+      "place": "洋室ワゴン・クローゼット左側",
+      "priority": "中",
+      "usageFrequency": "毎日",
+      "memo": "サイズ別・保育園用・外出用で分ける。",
+      "photoIds": [
+        "61754_0.jpg",
+        "61736_0.jpg",
+        "61752_0.jpg"
+      ]
+    },
+    {
+      "id": "adult_clothes",
+      "name": "大人服",
+      "category": "衣類",
+      "room": "洋室・和室",
+      "storage": "クローゼット",
+      "place": "洋室クローゼット・和室収納",
+      "priority": "中",
+      "usageFrequency": "毎日",
+      "memo": "人別に左右を分けると管理しやすい。",
+      "photoIds": [
+        "61728_0.jpg",
+        "61729_0.jpg",
+        "61735_0.jpg",
+        "61751_0.jpg"
+      ]
+    },
+    {
+      "id": "formal_clothes",
+      "name": "スーツ・フォーマル服",
+      "category": "衣類",
+      "room": "クローゼット",
+      "storage": "洋室クローゼット",
+      "place": "クローゼット右側",
+      "priority": "中",
+      "usageFrequency": "仕事・冠婚葬祭",
+      "memo": "頻度が低い物は右側・奥へ。",
+      "photoIds": [
+        "61751_0.jpg"
       ]
     },
     {
       "id": "study_books",
-      "name": "診断士・資格本・書類",
+      "name": "診断士・電験・学習本",
       "category": "書類・本",
       "room": "和室",
-      "storage": "和室本棚",
-      "memo": "診断士/電験/書類を分けると良い",
-      "photoRefs": [
-        "photos/61736_0.jpg",
-        "photos/61737_0.jpg"
+      "storage": "本棚",
+      "place": "和室収納棚",
+      "priority": "高",
+      "usageFrequency": "学習時",
+      "memo": "試験用資料は現役/保管/処分候補で分けると良い。",
+      "photoIds": [
+        "61736_0.jpg",
+        "61737_0.jpg"
+      ]
+    },
+    {
+      "id": "documents",
+      "name": "書類・プリント類",
+      "category": "書類",
+      "room": "和室・収納棚",
+      "storage": "本棚・ファイル",
+      "place": "和室棚・収納棚",
+      "priority": "中",
+      "usageFrequency": "必要時",
+      "memo": "未処理/保管/廃棄の3トレー化推奨。",
+      "photoIds": [
+        "61736_0.jpg",
+        "61737_0.jpg"
       ]
     },
     {
@@ -179,233 +344,315 @@
       "name": "漫画・絵本",
       "category": "本",
       "room": "和室・リビング",
-      "storage": "和室本棚・リビング子ども棚",
-      "memo": "子ども絵本と大人本は棚を分ける",
-      "photoRefs": [
-        "photos/61737_0.jpg",
-        "photos/61754_0.jpg"
+      "storage": "本棚・絵本ケース",
+      "place": "和室棚・リビング右側",
+      "priority": "低",
+      "usageFrequency": "読書時",
+      "memo": "子ども絵本は低い位置へ。漫画は一段に集約。",
+      "photoIds": [
+        "61737_0.jpg",
+        "61738_0.jpg"
       ]
     },
     {
-      "id": "pullup_stand",
-      "name": "懸垂ラック・ダンベル",
+      "id": "desktop_pc_monitor",
+      "name": "PC・モニター・キーボード",
+      "category": "仕事・学習",
+      "room": "LD",
+      "storage": "デスク",
+      "place": "LDデスク上",
+      "priority": "高",
+      "usageFrequency": "毎日",
+      "memo": "デスク上はPCと食事以外を置かない運用に。",
+      "photoIds": [
+        "61738_0.jpg"
+      ]
+    },
+    {
+      "id": "pullup_station",
+      "name": "懸垂ラック",
       "category": "運動用品",
       "room": "洋室",
-      "storage": "洋室窓側",
-      "memo": "運動導線は良い。床のケーブルと干渉しない配置に",
-      "photoRefs": [
-        "photos/61754_0.jpg"
+      "storage": "窓際",
+      "place": "洋室窓際",
+      "priority": "中",
+      "usageFrequency": "運動時",
+      "memo": "運動動線として良いが、窓前占有に注意。",
+      "photoIds": [
+        "61754_0.jpg"
       ]
     },
     {
-      "id": "desk_chair",
-      "name": "昇降デスク・椅子",
+      "id": "dumbbells",
+      "name": "ダンベル・筋トレ用品",
+      "category": "運動用品",
+      "room": "洋室",
+      "storage": "懸垂ラック周辺",
+      "place": "ラック下",
+      "priority": "中",
+      "usageFrequency": "運動時",
+      "memo": "床に置きっぱなしだと掃除しにくい。トレー化推奨。",
+      "photoIds": [
+        "61754_0.jpg"
+      ]
+    },
+    {
+      "id": "work_chair",
+      "name": "ゲーミングチェア",
       "category": "家具",
       "room": "洋室",
-      "storage": "洋室窓側",
-      "memo": "勉強・プログラミング拠点",
-      "photoRefs": [
-        "photos/61754_0.jpg"
-      ]
-    },
-    {
-      "id": "child_clothes",
-      "name": "子ども服",
-      "category": "衣類",
-      "room": "洋室・和室",
-      "storage": "ワゴン・クローゼット",
-      "memo": "サイズ別/保育園用/外出用で分けるとよい",
-      "photoRefs": [
-        "photos/61755_0.jpg",
-        "photos/61732_0.jpg"
-      ]
-    },
-    {
-      "id": "baby_carrier",
-      "name": "抱っこ紐",
-      "category": "子ども用品",
-      "room": "玄関・クローゼット",
-      "storage": "玄関上段・クローゼット",
-      "memo": "外出動線上にあると便利",
-      "photoRefs": [
-        "photos/61709_0.jpg",
-        "photos/61734_0.jpg"
-      ]
-    },
-    {
-      "id": "clothes_adult",
-      "name": "大人衣類・スーツ・シャツ",
-      "category": "衣類",
-      "room": "洋室・和室",
-      "storage": "クローゼット",
-      "memo": "夫婦・用途別に左右分け推奨",
-      "photoRefs": [
-        "photos/61731_0.jpg",
-        "photos/61732_0.jpg",
-        "photos/61733_0.jpg",
-        "photos/61734_0.jpg",
-        "photos/61752_0.jpg"
-      ]
-    },
-    {
-      "id": "projector",
-      "name": "プロジェクター・ガジェット",
-      "category": "家電",
-      "room": "クローゼット",
-      "storage": "クローゼット下段",
-      "memo": "ケーブルと一緒にガジェット箱へ",
-      "photoRefs": [
-        "photos/61733_0.jpg"
-      ]
-    },
-    {
-      "id": "cables",
-      "name": "ケーブル・充電器",
-      "category": "ガジェット",
-      "room": "クローゼット・洗面下・デスク",
-      "storage": "各所に点在",
-      "memo": "専用ケーブル箱を1つ作ると探し物が減る",
-      "photoRefs": [
-        "photos/61726_0.jpg",
-        "photos/61733_0.jpg",
-        "photos/61754_0.jpg"
-      ]
-    },
-    {
-      "id": "rice_cooker",
-      "name": "炊飯器",
-      "category": "キッチン家電",
-      "room": "キッチン",
-      "storage": "レンジラック",
-      "memo": "",
-      "photoRefs": [
-        "photos/61739_0.jpg"
-      ]
-    },
-    {
-      "id": "microwave_oven",
-      "name": "電子レンジ",
-      "category": "キッチン家電",
-      "room": "キッチン",
-      "storage": "レンジラック",
-      "memo": "",
-      "photoRefs": [
-        "photos/61739_0.jpg"
+      "storage": "デスク前",
+      "place": "洋室デスク",
+      "priority": "中",
+      "usageFrequency": "毎日",
+      "memo": "作業環境の中心。ケーブル整理で快適度アップ。",
+      "photoIds": [
+        "61754_0.jpg"
       ]
     },
     {
       "id": "bruno_hotplate",
       "name": "BRUNOホットプレート",
-      "category": "キッチン家電",
+      "category": "調理家電",
       "room": "キッチン",
       "storage": "キッチン下段引き出し",
-      "memo": "使用頻度が低ければ上段・奥へ",
-      "photoRefs": [
-        "photos/61749_0.jpg"
+      "place": "キッチン下段引き出し",
+      "priority": "低",
+      "usageFrequency": "月数回以下",
+      "memo": "大きいので低頻度収納へ。",
+      "photoIds": [
+        "61748_0.jpg"
       ]
     },
     {
       "id": "takoyaki_plate",
-      "name": "たこ焼きプレート",
-      "category": "キッチン用品",
+      "name": "たこ焼き器／プレート",
+      "category": "調理家電",
       "room": "キッチン",
       "storage": "キッチン下段引き出し",
-      "memo": "",
-      "photoRefs": [
-        "photos/61749_0.jpg"
+      "place": "キッチン下段引き出し",
+      "priority": "低",
+      "usageFrequency": "低頻度",
+      "memo": "BRUNOとセット管理。",
+      "photoIds": [
+        "61748_0.jpg"
       ]
     },
     {
-      "id": "plates_cups",
-      "name": "食器・マグ・茶碗",
-      "category": "キッチン用品",
+      "id": "rice_cooker",
+      "name": "炊飯器",
+      "category": "調理家電",
       "room": "キッチン",
-      "storage": "食器棚",
-      "memo": "毎日使うものを中段へ、来客用は上段へ",
-      "photoRefs": [
-        "photos/61748_0.jpg"
+      "storage": "キッチン家電棚",
+      "place": "冷蔵庫横家電棚",
+      "priority": "高",
+      "usageFrequency": "毎日〜週数回",
+      "memo": "使用頻度高。蒸気の逃げ道に注意。",
+      "photoIds": [
+        "61739_0.jpg"
+      ]
+    },
+    {
+      "id": "microwave_oven",
+      "name": "電子レンジ・オーブン",
+      "category": "調理家電",
+      "room": "キッチン",
+      "storage": "キッチン家電棚",
+      "place": "冷蔵庫横家電棚",
+      "priority": "高",
+      "usageFrequency": "毎日",
+      "memo": "使用頻度高。周辺に物を置きすぎない。",
+      "photoIds": [
+        "61739_0.jpg"
+      ]
+    },
+    {
+      "id": "electric_kettle",
+      "name": "電気ケトル",
+      "category": "調理家電",
+      "room": "キッチン",
+      "storage": "キッチンカウンター",
+      "place": "シンク横",
+      "priority": "中",
+      "usageFrequency": "毎日",
+      "memo": "水回りのコードに注意。",
+      "photoIds": [
+        "61739_0.jpg"
+      ]
+    },
+    {
+      "id": "food_processor",
+      "name": "フードプロセッサー／ブレンダー",
+      "category": "調理家電",
+      "room": "キッチン",
+      "storage": "吊戸棚",
+      "place": "キッチン吊戸棚下段",
+      "priority": "低",
+      "usageFrequency": "低頻度",
+      "memo": "低頻度なら上段または奥へ。",
+      "photoIds": [
+        "61740_0.jpg"
       ]
     },
     {
       "id": "pots_pans",
       "name": "鍋・フライパン",
-      "category": "キッチン用品",
+      "category": "調理器具",
       "room": "キッチン",
-      "storage": "シンク下・コンロ下",
-      "memo": "鍋蓋スタンド追加で改善",
-      "photoRefs": [
-        "photos/61742_0.jpg",
-        "photos/61751_0.jpg"
+      "storage": "キッチン下段引き出し",
+      "place": "コンロ下・シンク下",
+      "priority": "高",
+      "usageFrequency": "毎日",
+      "memo": "鍋ふたスタンド追加で取り出し改善。",
+      "photoIds": [
+        "61745_0.jpg",
+        "61747_0.jpg"
       ]
     },
     {
-      "id": "food_containers",
+      "id": "dishes",
+      "name": "食器・皿・茶碗",
+      "category": "食器",
+      "room": "キッチン",
+      "storage": "食器棚",
+      "place": "キッチン収納棚",
+      "priority": "高",
+      "usageFrequency": "毎日",
+      "memo": "毎日使う食器は中段へ。子ども食器は低い位置。",
+      "photoIds": [
+        "61749_0.jpg"
+      ]
+    },
+    {
+      "id": "storage_containers",
       "name": "保存容器・タッパー",
       "category": "キッチン用品",
       "room": "キッチン",
-      "storage": "シンク下引き出し",
-      "memo": "フタと本体を分けると使いやすい",
-      "photoRefs": [
-        "photos/61742_0.jpg",
-        "photos/61743_0.jpg"
-      ]
-    },
-    {
-      "id": "kitchen_tools",
-      "name": "調理器具・ピーラー・ボウル",
-      "category": "キッチン用品",
-      "room": "キッチン",
-      "storage": "シンク下引き出し",
-      "memo": "調理系と保存系を分ける",
-      "photoRefs": [
-        "photos/61742_0.jpg",
-        "photos/61743_0.jpg"
-      ]
-    },
-    {
-      "id": "children_toys",
-      "name": "子どもおもちゃ",
-      "category": "子ども用品",
-      "room": "リビング・和室",
-      "storage": "リビング棚・和室",
-      "memo": "絵本/ブロック/人形で箱分け",
-      "photoRefs": [
-        "photos/61738_0.jpg",
-        "photos/61754_0.jpg"
-      ]
-    },
-    {
-      "id": "tv_area",
-      "name": "テレビ周り・子ども棚",
-      "category": "家具",
-      "room": "リビング",
-      "storage": "テレビ台周辺",
-      "memo": "子ども用品と大人用品の境界を決める",
-      "photoRefs": [
-        "photos/61754_0.jpg"
-      ]
-    },
-    {
-      "id": "medicines",
-      "name": "薬箱・医療用品",
-      "category": "医薬品",
-      "room": "洋室・リビング",
-      "storage": "ワゴン・小物ケース",
-      "memo": "期限管理対象",
-      "photoRefs": [
-        "photos/61756_0.jpg"
+      "storage": "引き出し",
+      "place": "キッチン引き出し",
+      "priority": "中",
+      "usageFrequency": "週数回",
+      "memo": "蓋と容器をセット化すると探しやすい。",
+      "photoIds": [
+        "61743_0.jpg",
+        "61746_0.jpg"
       ]
     },
     {
       "id": "fridge_food",
-      "name": "冷蔵食品・冷凍食品",
+      "name": "冷蔵食品",
       "category": "食品",
       "room": "キッチン",
-      "storage": "冷蔵庫・冷凍庫",
-      "memo": "買い物管理対象。冷凍庫は肉/野菜/作り置きで分ける",
-      "photoRefs": [
-        "photos/61759_0.jpg",
-        "photos/61760_0.jpg"
+      "storage": "冷蔵庫",
+      "place": "冷蔵庫内",
+      "priority": "高",
+      "usageFrequency": "毎日",
+      "memo": "黒い袋など中身が見えないものはラベル推奨。",
+      "photoIds": [
+        "61757_0.jpg",
+        "61760_0.jpg"
+      ]
+    },
+    {
+      "id": "freezer_food",
+      "name": "冷凍食品・冷凍食材",
+      "category": "食品",
+      "room": "キッチン",
+      "storage": "冷凍庫",
+      "place": "冷凍庫内",
+      "priority": "中",
+      "usageFrequency": "週数回",
+      "memo": "肉・野菜・作り置きでゾーン分け。",
+      "photoIds": [
+        "61759_0.jpg"
+      ]
+    },
+    {
+      "id": "baby_tableware",
+      "name": "子ども食器・マグ・離乳食用品",
+      "category": "子ども用品",
+      "room": "キッチン",
+      "storage": "食器棚・引き出し",
+      "place": "キッチン棚・引き出し",
+      "priority": "高",
+      "usageFrequency": "毎日",
+      "memo": "子ども用品は専用引き出し/低位置が使いやすい。",
+      "photoIds": [
+        "61749_0.jpg",
+        "61746_0.jpg"
+      ]
+    },
+    {
+      "id": "bed_futon",
+      "name": "寝具・ベッド周り",
+      "category": "寝具",
+      "room": "洋室",
+      "storage": "ベッド・押入",
+      "place": "ベッド・押入",
+      "priority": "中",
+      "usageFrequency": "毎日",
+      "memo": "布団・枕の予備は押入へ。",
+      "photoIds": [
+        "61754_0.jpg",
+        "61753_0.jpg"
+      ]
+    },
+    {
+      "id": "toy_kitchen",
+      "name": "おもちゃキッチン",
+      "category": "子ども用品",
+      "room": "玄関横収納・リビング",
+      "storage": "収納棚・リビング",
+      "place": "収納棚下段／リビング",
+      "priority": "低",
+      "usageFrequency": "遊ぶ時",
+      "memo": "大型おもちゃ。使わない時期は押入へ。",
+      "photoIds": [
+        "61713_0.jpg"
+      ]
+    },
+    {
+      "id": "decor_lighting",
+      "name": "照明・スタンド・インテリアライト",
+      "category": "インテリア",
+      "room": "和室・収納",
+      "storage": "和室・押入",
+      "place": "和室・押入",
+      "priority": "低",
+      "usageFrequency": "常設/季節",
+      "memo": "飾り系は季節用品箱へ。",
+      "photoIds": [
+        "61731_0.jpg",
+        "61733_0.jpg"
+      ]
+    },
+    {
+      "id": "network_devices",
+      "name": "ルーター・充電器・ケーブル類",
+      "category": "ガジェット",
+      "room": "洋室・デスク周り",
+      "storage": "デスク下・収納",
+      "place": "デスク周辺・クローゼット下",
+      "priority": "中",
+      "usageFrequency": "毎日",
+      "memo": "ケーブルボックス化すると掃除しやすい。",
+      "photoIds": [
+        "61754_0.jpg",
+        "61735_0.jpg"
+      ]
+    },
+    {
+      "id": "portable_projector",
+      "name": "小型プロジェクター／ガジェット",
+      "category": "ガジェット",
+      "room": "洋室クローゼット",
+      "storage": "クローゼット下段",
+      "place": "洋室クローゼット下",
+      "priority": "低",
+      "usageFrequency": "低頻度",
+      "memo": "ガジェット類は箱/ケースにまとめる。",
+      "photoIds": [
+        "61735_0.jpg"
       ]
     }
   ]
