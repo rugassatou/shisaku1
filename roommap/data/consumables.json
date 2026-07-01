@@ -1,0 +1,654 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-01",
+  "description": "写真52枚から作成した消耗品管理JSON。購入日・周期は初期値なのでHTML上で編集してください。",
+  "items": [
+    {
+      "id": "toilet_paper",
+      "name": "トイレットペーパー",
+      "category": "紙類",
+      "room": "トイレ",
+      "storage": "トイレ床横ストック",
+      "stockStatus": "あり",
+      "stockNote": "2倍巻きのストックが見える",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "nextPurchaseAt": "",
+      "priority": "高",
+      "buyPlace": "ドラッグストア / Amazon / 楽天",
+      "memo": "残り2ロール以下で購入",
+      "photoRefs": [
+        "photos/61718_0.jpg"
+      ]
+    },
+    {
+      "id": "flushable_wipes",
+      "name": "流せるおしりふき・トイレシート",
+      "category": "紙類",
+      "room": "トイレ",
+      "storage": "トイレ棚・床横",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 60,
+      "priority": "中",
+      "buyPlace": "ドラッグストア",
+      "memo": "トイレットペーパー横にあり",
+      "photoRefs": [
+        "photos/61718_0.jpg"
+      ]
+    },
+    {
+      "id": "toilet_deodorizer",
+      "name": "トイレ消臭スプレー",
+      "category": "掃除・衛生",
+      "room": "トイレ",
+      "storage": "トイレ背面棚",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 90,
+      "priority": "中",
+      "buyPlace": "ドラッグストア",
+      "memo": "使用頻度が低ければ期限確認",
+      "photoRefs": [
+        "photos/61718_0.jpg"
+      ]
+    },
+    {
+      "id": "bath_mold_killer",
+      "name": "カビキラー",
+      "category": "掃除・衛生",
+      "room": "浴室",
+      "storage": "浴室壁面・掃除用品バー",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 120,
+      "priority": "高",
+      "buyPlace": "ドラッグストア",
+      "memo": "赤ボトル。浴室掃除用",
+      "photoRefs": [
+        "photos/61722_0.jpg"
+      ]
+    },
+    {
+      "id": "bath_cleaner",
+      "name": "バスマジックリン系浴室洗剤",
+      "category": "掃除・衛生",
+      "room": "浴室",
+      "storage": "浴室壁面・掃除用品バー",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 90,
+      "priority": "高",
+      "buyPlace": "ドラッグストア",
+      "memo": "ピンクのスプレー洗剤",
+      "photoRefs": [
+        "photos/61722_0.jpg"
+      ]
+    },
+    {
+      "id": "body_soap",
+      "name": "ボディソープ",
+      "category": "風呂・洗面",
+      "room": "浴室",
+      "storage": "浴室棚・洗面ワゴン",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "priority": "高",
+      "buyPlace": "ドラッグストア",
+      "memo": "浴室とワゴンにボトルあり",
+      "photoRefs": [
+        "photos/61721_0.jpg",
+        "photos/61722_0.jpg",
+        "photos/61757_0.jpg"
+      ]
+    },
+    {
+      "id": "shampoo",
+      "name": "シャンプー",
+      "category": "風呂・洗面",
+      "room": "浴室",
+      "storage": "浴室棚",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "priority": "高",
+      "buyPlace": "ドラッグストア",
+      "memo": "ボトル複数あり。家族用に統一すると管理しやすい",
+      "photoRefs": [
+        "photos/61721_0.jpg",
+        "photos/61722_0.jpg"
+      ]
+    },
+    {
+      "id": "conditioner",
+      "name": "コンディショナー・トリートメント",
+      "category": "風呂・洗面",
+      "room": "浴室",
+      "storage": "浴室棚",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 60,
+      "priority": "中",
+      "buyPlace": "ドラッグストア",
+      "memo": "",
+      "photoRefs": [
+        "photos/61721_0.jpg",
+        "photos/61722_0.jpg"
+      ]
+    },
+    {
+      "id": "hand_soap",
+      "name": "ハンドソープ",
+      "category": "風呂・洗面",
+      "room": "洗面所・キッチン",
+      "storage": "洗面台・キッチンシンク周辺",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "priority": "高",
+      "buyPlace": "ドラッグストア",
+      "memo": "複数箇所で使用",
+      "photoRefs": [
+        "photos/61724_0.jpg",
+        "photos/61739_0.jpg",
+        "photos/61757_0.jpg"
+      ]
+    },
+    {
+      "id": "toothpaste",
+      "name": "歯磨き粉",
+      "category": "風呂・洗面",
+      "room": "洗面所",
+      "storage": "洗面台・鏡裏収納",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 60,
+      "priority": "高",
+      "buyPlace": "ドラッグストア",
+      "memo": "子ども用らしき歯磨き粉もあり",
+      "photoRefs": [
+        "photos/61724_0.jpg",
+        "photos/61725_0.jpg"
+      ]
+    },
+    {
+      "id": "toothbrush",
+      "name": "歯ブラシ",
+      "category": "風呂・洗面",
+      "room": "洗面所",
+      "storage": "洗面台",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 30,
+      "priority": "高",
+      "buyPlace": "ドラッグストア",
+      "memo": "交換周期は月1目安",
+      "photoRefs": [
+        "photos/61724_0.jpg",
+        "photos/61725_0.jpg"
+      ]
+    },
+    {
+      "id": "face_wash",
+      "name": "洗顔・クレンジング",
+      "category": "風呂・洗面",
+      "room": "洗面所",
+      "storage": "鏡裏収納・洗面台下",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 60,
+      "priority": "中",
+      "buyPlace": "ドラッグストア",
+      "memo": "",
+      "photoRefs": [
+        "photos/61725_0.jpg",
+        "photos/61726_0.jpg"
+      ]
+    },
+    {
+      "id": "cosmetics",
+      "name": "化粧品・スキンケア",
+      "category": "風呂・洗面",
+      "room": "洗面所・玄関棚",
+      "storage": "鏡裏収納・玄関飾り棚",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 120,
+      "priority": "低",
+      "buyPlace": "ドラッグストア / 専門店",
+      "memo": "香水・化粧品・ケア用品が複数箇所に点在",
+      "photoRefs": [
+        "photos/61713_0.jpg",
+        "photos/61725_0.jpg"
+      ]
+    },
+    {
+      "id": "laundry_detergent",
+      "name": "洗濯洗剤",
+      "category": "洗濯",
+      "room": "洗面所",
+      "storage": "洗濯機横収納・キッチン上棚にも一部混在",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "priority": "高",
+      "buyPlace": "ドラッグストア",
+      "memo": "洗濯機周辺に集約推奨",
+      "photoRefs": [
+        "photos/61716_0.jpg",
+        "photos/61741_0.jpg"
+      ]
+    },
+    {
+      "id": "fabric_softener",
+      "name": "柔軟剤",
+      "category": "洗濯",
+      "room": "洗面所",
+      "storage": "洗濯機横収納",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "priority": "中",
+      "buyPlace": "ドラッグストア",
+      "memo": "",
+      "photoRefs": [
+        "photos/61716_0.jpg"
+      ]
+    },
+    {
+      "id": "bleach",
+      "name": "衣料用漂白剤・ハイター系",
+      "category": "洗濯",
+      "room": "洗面所",
+      "storage": "洗濯機横収納",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 90,
+      "priority": "中",
+      "buyPlace": "ドラッグストア",
+      "memo": "",
+      "photoRefs": [
+        "photos/61716_0.jpg",
+        "photos/61741_0.jpg"
+      ]
+    },
+    {
+      "id": "laundry_net",
+      "name": "洗濯ネット",
+      "category": "洗濯",
+      "room": "洗面所",
+      "storage": "洗濯機上・洗濯機横",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 365,
+      "priority": "低",
+      "buyPlace": "100均 / ニトリ",
+      "memo": "消耗は遅いが破れたら交換",
+      "photoRefs": [
+        "photos/61709_0.jpg",
+        "photos/61717_0.jpg"
+      ]
+    },
+    {
+      "id": "wipes",
+      "name": "ウェットティッシュ・おむつ消臭袋",
+      "category": "紙類",
+      "room": "洋室・リビング",
+      "storage": "ワゴン上段",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 30,
+      "priority": "高",
+      "buyPlace": "ドラッグストア / Amazon",
+      "memo": "子ども用品として使用頻度高そう",
+      "photoRefs": [
+        "photos/61756_0.jpg"
+      ]
+    },
+    {
+      "id": "masks",
+      "name": "マスク",
+      "category": "衛生",
+      "room": "洋室・玄関",
+      "storage": "ワゴン・玄関周辺",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 90,
+      "priority": "中",
+      "buyPlace": "ドラッグストア",
+      "memo": "外出動線上に置くとよい",
+      "photoRefs": [
+        "photos/61756_0.jpg"
+      ]
+    },
+    {
+      "id": "batteries",
+      "name": "電池",
+      "category": "日用品",
+      "room": "玄関収納・リビング収納",
+      "storage": "小物棚・ワゴン",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 180,
+      "priority": "中",
+      "buyPlace": "家電量販店 / Amazon",
+      "memo": "単3・単4を分けるとよい",
+      "photoRefs": [
+        "photos/61712_0.jpg",
+        "photos/61756_0.jpg"
+      ]
+    },
+    {
+      "id": "tape",
+      "name": "ガムテープ・養生テープ",
+      "category": "日用品",
+      "room": "玄関収納・リビング収納",
+      "storage": "玄関右収納上段など",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 365,
+      "priority": "低",
+      "buyPlace": "100均 / ホームセンター",
+      "memo": "",
+      "photoRefs": [
+        "photos/61712_0.jpg"
+      ]
+    },
+    {
+      "id": "poly_bags",
+      "name": "ポリ袋・ビニール袋",
+      "category": "キッチン消耗品",
+      "room": "キッチン",
+      "storage": "シンク下引き出し・キッチン下収納",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "priority": "高",
+      "buyPlace": "スーパー / 100均",
+      "memo": "ポリエチレン手袋・袋類あり",
+      "photoRefs": [
+        "photos/61742_0.jpg",
+        "photos/61743_0.jpg",
+        "photos/61759_0.jpg"
+      ]
+    },
+    {
+      "id": "plastic_wrap",
+      "name": "ラップ",
+      "category": "キッチン消耗品",
+      "room": "キッチン",
+      "storage": "シンク下引き出し",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "priority": "高",
+      "buyPlace": "スーパー / ドラッグストア",
+      "memo": "サランラップ系が見える",
+      "photoRefs": [
+        "photos/61759_0.jpg"
+      ]
+    },
+    {
+      "id": "aluminum_foil",
+      "name": "アルミホイル",
+      "category": "キッチン消耗品",
+      "room": "キッチン",
+      "storage": "シンク下引き出し",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 90,
+      "priority": "中",
+      "buyPlace": "スーパー / 100均",
+      "memo": "銀色保温袋も近くにあり。用途別に分けたい",
+      "photoRefs": [
+        "photos/61759_0.jpg"
+      ]
+    },
+    {
+      "id": "zip_bags",
+      "name": "ジップロック・保存袋",
+      "category": "キッチン消耗品",
+      "room": "キッチン",
+      "storage": "シンク下・洗面台下に一部混在",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 60,
+      "priority": "高",
+      "buyPlace": "スーパー / コストコ",
+      "memo": "冷凍・作り置き用途",
+      "photoRefs": [
+        "photos/61726_0.jpg",
+        "photos/61759_0.jpg"
+      ]
+    },
+    {
+      "id": "kitchen_paper",
+      "name": "キッチンペーパー",
+      "category": "キッチン消耗品",
+      "room": "キッチン",
+      "storage": "冷蔵庫横・キッチン周辺",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "priority": "高",
+      "buyPlace": "ドラッグストア / コストコ",
+      "memo": "",
+      "photoRefs": [
+        "photos/61739_0.jpg"
+      ]
+    },
+    {
+      "id": "dish_soap",
+      "name": "食器用洗剤",
+      "category": "キッチン消耗品",
+      "room": "キッチン",
+      "storage": "シンク周辺",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 45,
+      "priority": "高",
+      "buyPlace": "ドラッグストア",
+      "memo": "",
+      "photoRefs": [
+        "photos/61739_0.jpg"
+      ]
+    },
+    {
+      "id": "sponge",
+      "name": "スポンジ",
+      "category": "キッチン消耗品",
+      "room": "キッチン",
+      "storage": "シンク周辺",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 30,
+      "priority": "高",
+      "buyPlace": "100均 / ドラッグストア",
+      "memo": "月1交換目安",
+      "photoRefs": [
+        "photos/61739_0.jpg"
+      ]
+    },
+    {
+      "id": "oil",
+      "name": "米油・調理油",
+      "category": "食品ストック",
+      "room": "キッチン",
+      "storage": "吊戸棚・冷蔵庫横",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 60,
+      "priority": "高",
+      "buyPlace": "スーパー",
+      "memo": "米油あり。未開封ストックは1本まででよさそう",
+      "photoRefs": [
+        "photos/61740_0.jpg"
+      ]
+    },
+    {
+      "id": "seasonings",
+      "name": "調味料類",
+      "category": "食品ストック",
+      "room": "キッチン・冷蔵庫",
+      "storage": "冷蔵庫ドア・キッチン棚",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 90,
+      "priority": "中",
+      "buyPlace": "スーパー",
+      "memo": "醤油・しょうが・だし系など",
+      "photoRefs": [
+        "photos/61760_0.jpg"
+      ]
+    },
+    {
+      "id": "baby_milk",
+      "name": "フォローアップミルク・ぐんぐん",
+      "category": "子ども食品",
+      "room": "キッチン",
+      "storage": "キッチン吊戸棚",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 30,
+      "priority": "高",
+      "buyPlace": "ドラッグストア / Amazon",
+      "memo": "缶が複数。切れると困る高優先度",
+      "photoRefs": [
+        "photos/61740_0.jpg"
+      ]
+    },
+    {
+      "id": "soy_milk",
+      "name": "豆乳・牛乳系",
+      "category": "食品ストック",
+      "room": "キッチン・冷蔵庫",
+      "storage": "キッチン吊戸棚・冷蔵庫ドア",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 14,
+      "priority": "中",
+      "buyPlace": "スーパー",
+      "memo": "開封後は冷蔵。常温品は食品棚へ",
+      "photoRefs": [
+        "photos/61740_0.jpg",
+        "photos/61760_0.jpg"
+      ]
+    },
+    {
+      "id": "frozen_food",
+      "name": "冷凍食品・冷凍食材",
+      "category": "食品ストック",
+      "room": "キッチン",
+      "storage": "冷凍庫",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 30,
+      "priority": "中",
+      "buyPlace": "スーパー",
+      "memo": "枝豆・肉魚・惣菜系。カテゴリ分け推奨",
+      "photoRefs": [
+        "photos/61759_0.jpg"
+      ]
+    },
+    {
+      "id": "vegetables",
+      "name": "野菜ストック",
+      "category": "食品ストック",
+      "room": "キッチン",
+      "storage": "冷蔵庫野菜室",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 7,
+      "priority": "中",
+      "buyPlace": "スーパー",
+      "memo": "キャベツ、人参、ミニトマト等",
+      "photoRefs": [
+        "photos/61760_0.jpg"
+      ]
+    },
+    {
+      "id": "diapers",
+      "name": "おむつ・子ども衛生用品",
+      "category": "子ども用品",
+      "room": "和室・洋室",
+      "storage": "押入れ・ワゴン",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 30,
+      "priority": "高",
+      "buyPlace": "ドラッグストア / Amazon",
+      "memo": "おむつ消臭袋や子ども用品と近くに置くとよい",
+      "photoRefs": [
+        "photos/61736_0.jpg",
+        "photos/61756_0.jpg"
+      ]
+    },
+    {
+      "id": "pet_sheets_or_disposable_sheets",
+      "name": "使い捨てシート類",
+      "category": "紙類",
+      "room": "和室・押入れ",
+      "storage": "押入れ・収納下段",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 90,
+      "priority": "低",
+      "buyPlace": "ドラッグストア",
+      "memo": "用途要確認。写真上ではシート類に見える",
+      "photoRefs": [
+        "photos/61728_0.jpg"
+      ]
+    },
+    {
+      "id": "cleaning_wipes",
+      "name": "掃除用シート・フローリングシート",
+      "category": "掃除・衛生",
+      "room": "キッチン・リビング",
+      "storage": "シンク下・ワゴン",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 60,
+      "priority": "中",
+      "buyPlace": "ドラッグストア / 100均",
+      "memo": "",
+      "photoRefs": [
+        "photos/61742_0.jpg",
+        "photos/61756_0.jpg"
+      ]
+    },
+    {
+      "id": "food_wrap_misc",
+      "name": "紙皿・紙コップ・使い捨て食器",
+      "category": "キッチン消耗品",
+      "room": "キッチン",
+      "storage": "キッチン引き出し",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 180,
+      "priority": "低",
+      "buyPlace": "100均",
+      "memo": "イベント時・来客時用",
+      "photoRefs": [
+        "photos/61759_0.jpg"
+      ]
+    },
+    {
+      "id": "medicine",
+      "name": "薬・絆創膏・衛生小物",
+      "category": "医薬品",
+      "room": "洋室・リビング",
+      "storage": "ワゴン・小物ケース",
+      "stockStatus": "あり",
+      "lastPurchasedAt": "",
+      "expectedCycleDays": 180,
+      "priority": "中",
+      "buyPlace": "ドラッグストア",
+      "memo": "期限管理が必要。薬箱としてまとめたい",
+      "photoRefs": [
+        "photos/61736_0.jpg",
+        "photos/61756_0.jpg"
+      ]
+    }
+  ]
+}
