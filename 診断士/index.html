@@ -1,0 +1,1521 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>二次答案ログ HTML演習</title>
+  <style>
+    :root {
+      --bg: #fff8ef;
+      --paper: #fffdf8;
+      --line: #eed9b8;
+      --text: #242833;
+      --muted: #727782;
+      --main: #e9540d;
+      --main-dark: #8d2e12;
+      --blue: #2367c9;
+      --ok: #19784f;
+      --bad: #b22b2b;
+      --shadow: 0 8px 24px rgba(103, 63, 21, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.8;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 14px 14px 10px;
+      background: rgba(255, 248, 239, .96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #f4e3c8;
+    }
+    h1 {
+      margin: 0;
+      color: #5d1c0c;
+      font-size: clamp(24px, 7vw, 36px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    .sub { color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 2px 4px;
+    }
+    button, select, input, textarea {
+      font: inherit;
+    }
+    button, .fileBtn {
+      border: 1px solid var(--line);
+      background: #fffaf2;
+      color: #6b2a13;
+      border-radius: 9px;
+      padding: 9px 12px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    button.primary, .fileBtn.primary {
+      background: var(--main);
+      border-color: var(--main);
+      color: #fff;
+    }
+    button.active {
+      background: var(--main);
+      border-color: var(--main);
+      color: #fff;
+    }
+    button.small { padding: 5px 9px; font-size: 13px; }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 14px;
+    }
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+      margin: 14px 0;
+      box-shadow: var(--shadow);
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .grid {
+      display: grid;
+      gap: 12px;
+    }
+    @media (min-width: 820px) {
+      .grid.two { grid-template-columns: 1fr 1fr; }
+      .grid.side { grid-template-columns: 280px 1fr; align-items: start; }
+    }
+    label { color: #5d1c0c; font-weight: 800; }
+    select, input[type="text"], textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fff;
+      color: var(--text);
+      padding: 10px;
+    }
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+      line-height: 1.75;
+    }
+    .hidden { display: none !important; }
+    .muted { color: var(--muted); }
+    .status { color: #5d1c0c; font-weight: 700; }
+    .title {
+      color: var(--main-dark);
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.35;
+      margin: 0 0 8px;
+    }
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .kpi div {
+      border: 1px solid #f0dec4;
+      border-radius: 9px;
+      padding: 10px;
+      background: #fffaf2;
+      text-align: center;
+    }
+    .kpi b { display: block; font-size: 21px; color: var(--main-dark); }
+    .passage {
+      white-space: pre-wrap;
+      font-size: 17px;
+      line-height: 2.05;
+      user-select: text;
+    }
+    .mark {
+      border-radius: 4px;
+      padding: 1px 2px;
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
+      cursor: pointer;
+    }
+    .mark.s { background: #e2f3ec; text-decoration-color: #19784f; }
+    .mark.w { background: #fde5e2; text-decoration-color: #b22b2b; }
+    .mark.o { background: #e5efff; text-decoration-color: #2367c9; }
+    .mark.t { background: #fff0c2; text-decoration-color: #a66a00; }
+    .mark.c { background: #eee8ff; text-decoration-color: #7056bf; }
+    .mark.d { background: #f6e5d6; text-decoration-color: #8d2e12; }
+    .mark.q { background: #e7f2f3; text-decoration-color: #267b82; }
+    .mark.g { background: #edf7dd; text-decoration-color: #5b8c16; }
+    .mark.n { background: #ffe7f0; text-decoration-color: #b7356b; }
+    .markMenu {
+      position: fixed;
+      z-index: 50;
+      display: none;
+      max-width: min(560px, calc(100vw - 18px));
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fffdf8;
+      box-shadow: 0 10px 30px rgba(70, 37, 8, .18);
+    }
+    .markMenuTitle {
+      color: #5d1c0c;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .partCard, .qCard, .materialCard {
+      border: 1px solid #f0dec4;
+      border-radius: 9px;
+      background: #fffaf2;
+      padding: 12px;
+    }
+    .partText {
+      white-space: pre-wrap;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 2px 9px;
+      font-size: 13px;
+      font-weight: 800;
+      background: #f3e6d1;
+      color: #5d1c0c;
+    }
+    .tag.good { background: #e2f3ec; color: var(--ok); }
+    .tag.bad { background: #fde5e2; color: var(--bad); }
+    .tag.blue { background: #e5efff; color: var(--blue); }
+    .tag.warn { background: #fff0c2; color: #8a5700; }
+    .tag.s { background: #e2f3ec; color: #19784f; }
+    .tag.w { background: #fde5e2; color: #b22b2b; }
+    .tag.o { background: #e5efff; color: #2367c9; }
+    .tag.t { background: #fff0c2; color: #8a5700; }
+    .tag.c { background: #eee8ff; color: #7056bf; }
+    .tag.d { background: #f6e5d6; color: #8d2e12; }
+    .tag.q { background: #e7f2f3; color: #267b82; }
+    .tag.g { background: #edf7dd; color: #5b8c16; }
+    .tag.n { background: #ffe7f0; color: #b7356b; }
+    .answerMeta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    details {
+      border-top: 1px dashed #e5cfad;
+      margin-top: 10px;
+      padding-top: 8px;
+    }
+    summary {
+      color: var(--blue);
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .copyBox {
+      min-height: 230px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    input[type="file"] { display: none; }
+    .notice {
+      border-left: 5px solid var(--main);
+      background: #fff4e6;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #5d1c0c;
+    }
+    .materialList {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .materialItem {
+      border: 1px solid #f0dec4;
+      border-radius: 9px;
+      padding: 11px;
+      background: #fffaf2;
+      cursor: pointer;
+    }
+    .materialItem.activeItem {
+      border-color: var(--main);
+      box-shadow: inset 4px 0 0 var(--main);
+    }
+    .markList {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .timerBox {
+      display: grid;
+      gap: 12px;
+      align-items: center;
+    }
+    @media (min-width: 720px) {
+      .timerBox { grid-template-columns: 220px 1fr; }
+    }
+    .timerDisplay {
+      font-size: clamp(42px, 12vw, 68px);
+      line-height: 1;
+      font-weight: 900;
+      color: var(--main-dark);
+      font-variant-numeric: tabular-nums;
+    }
+    .timerWarn { color: var(--bad); font-weight: 900; }
+    .miniList {
+      display: grid;
+      gap: 8px;
+    }
+    .noteItem {
+      border: 1px solid #f0dec4;
+      border-radius: 9px;
+      padding: 10px;
+      background: #fffaf2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>二次答案ログ</h1>
+    <div class="sub">長文与件を読み、分類し、答案を書き、解説で復元する。</div>
+    <nav class="tabs">
+      <button class="tab active" data-view="home">教材</button>
+      <button class="tab" data-view="passage">本文</button>
+      <button class="tab" data-view="classify">分類</button>
+      <button class="tab" data-view="questions">設問</button>
+      <button class="tab" data-view="story">解説</button>
+      <button class="tab" data-view="dashboard">進捗</button>
+      <button class="tab" data-view="records">記録</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="view-home">
+      <div class="panel">
+        <div class="title">教材を選ぶ</div>
+        <div class="grid side">
+          <div class="grid">
+            <label>事例で絞り込み</label>
+            <select id="caseFilter">
+              <option value="">すべて</option>
+              <option>事例I</option>
+              <option>事例II</option>
+              <option>事例III</option>
+            </select>
+            <label>教材</label>
+            <select id="materialSelect"></select>
+            <button class="primary" id="openMaterialBtn">この教材を開く</button>
+            <button id="openUnstartedBtn">未着手から選ぶ</button>
+            <button id="openRandomBtn">ランダム出題</button>
+            <label class="fileBtn" for="materialFiles">教材JSON/セットJSONを追加読込</label>
+            <input id="materialFiles" type="file" accept="application/json,.json" multiple>
+          </div>
+          <div>
+            <p class="notice">
+              教材は起動時にまとめて読み込みます。通常は <b>materials/materials_bundle.json</b> を1回読むだけで、
+              事例I〜IIIの問題を一覧から選べます。
+            </p>
+            <div id="materialInfo" class="materialCard"></div>
+            <div class="kpi">
+              <div><b id="materialCount">0</b><span>教材</span></div>
+              <div><b id="partCount">0</b><span>分類対象</span></div>
+              <div><b id="questionCount">0</b><span>設問</span></div>
+            </div>
+            <div class="materialList" id="materialList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-passage" class="hidden">
+      <div class="panel">
+        <div class="title" id="passageTitle">本文</div>
+        <div class="muted" id="passageMeta"></div>
+        <div class="row" style="margin-top:10px">
+          <button class="primary" id="scoreMarksBtn">線引きを採点</button>
+          <button id="clearMarksBtn">線引きを全削除</button>
+          <span class="status" id="markScoreText">未採点</span>
+        </div>
+      </div>
+      <div class="panel">
+        <div id="passageText" class="passage"></div>
+      </div>
+      <div class="panel">
+        <div class="title">自分の線引き</div>
+        <div id="markList" class="markList"></div>
+      </div>
+    </section>
+
+    <section id="view-classify" class="hidden">
+      <div class="panel">
+        <div class="title">重要箇所の分類</div>
+        <div class="row">
+          <button class="primary" id="scorePartsBtn">分類を採点</button>
+          <button id="showPartAnswersBtn">正解と解説を表示</button>
+          <span class="status" id="partScoreText">未採点</span>
+        </div>
+        <div class="kpi">
+          <div><b id="scoreCorrect">0</b><span>正解</span></div>
+          <div><b id="scoreAnswered">0</b><span>回答済</span></div>
+          <div><b id="scoreRate">0%</b><span>正答率</span></div>
+        </div>
+      </div>
+      <div class="grid" id="partsList"></div>
+    </section>
+
+    <section id="view-questions" class="hidden">
+      <div class="panel">
+        <div class="title">設問演習</div>
+        <div class="muted">答案は自動保存されます。キーワード確認は補助であり、実際の採点そのものではありません。</div>
+        <div style="margin-top:10px">
+          <label>設問番号</label>
+          <select id="questionSelect"></select>
+        </div>
+      </div>
+      <div class="grid" id="questionsList"></div>
+    </section>
+
+    <section id="view-story" class="hidden">
+      <div class="panel">
+        <div class="title">ストーリー復元</div>
+        <div id="storyBox" class="grid"></div>
+      </div>
+      <div class="panel">
+        <div class="title">作問・抽出の観点</div>
+        <div id="designNote"></div>
+      </div>
+    </section>
+
+    <section id="view-dashboard" class="hidden">
+      <div class="panel">
+        <div class="title">80分タイマー</div>
+        <div class="timerBox">
+          <div>
+            <div class="timerDisplay" id="timerDisplay">80:00</div>
+            <div class="muted" id="timerStatus">未開始</div>
+          </div>
+          <div class="grid">
+            <div class="row">
+              <button class="primary" id="timerStartBtn">開始/再開</button>
+              <button id="timerPauseBtn">一時停止</button>
+              <button id="timerFinishBtn">完了</button>
+              <button id="timerResetBtn">リセット</button>
+            </div>
+            <div class="row">
+              <button class="small phaseBtn" data-phase="設問解釈">設問解釈</button>
+              <button class="small phaseBtn" data-phase="与件読解">与件読解</button>
+              <button class="small phaseBtn" data-phase="答案作成">答案作成</button>
+              <button class="small phaseBtn" data-phase="見直し">見直し</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="title">演習履歴</div>
+        <div class="kpi">
+          <div><b id="dashStarted">0</b><span>着手</span></div>
+          <div><b id="dashCompleted">0</b><span>完了</span></div>
+          <div><b id="dashAvgMark">0%</b><span>線引き平均</span></div>
+        </div>
+        <div id="dashboardSummary" class="grid" style="margin-top:12px"></div>
+      </div>
+      <div class="panel">
+        <div class="title">最近の演習</div>
+        <div id="recentList" class="grid"></div>
+      </div>
+      <div class="panel">
+        <div class="title">間違いノート</div>
+        <div class="muted">分類ミス、線引き取りこぼし、答案の不足キーワードを横断表示します。</div>
+        <div id="mistakeNotes" class="grid" style="margin-top:12px"></div>
+      </div>
+    </section>
+
+    <section id="view-records" class="hidden">
+      <div class="panel">
+        <div class="title">記録の扱い</div>
+        <p>
+          静的HTMLはGitHub上の <b>records</b> フォルダへ自動保存できません。
+          この画面ではブラウザ内保存、記録JSONのダウンロード、記録JSONの復元を行います。
+        </p>
+        <div class="row">
+          <button class="primary" id="downloadRecordBtn">記録JSONをダウンロード</button>
+          <label class="fileBtn" for="recordFile">記録JSONをインポート</label>
+          <input id="recordFile" type="file" accept="application/json,.json">
+          <button id="copySummaryBtn">コピー用まとめ作成</button>
+          <button id="clearCurrentBtn">この教材の記録を削除</button>
+        </div>
+        <p class="muted">
+          ダウンロードした記録JSONをGitHubへ残したい場合は、手動で <b>records</b> フォルダへ追加してcommitします。
+        </p>
+      </div>
+      <div class="panel">
+        <textarea id="summaryBox" class="copyBox" placeholder="コピー用まとめがここに出ます。"></textarea>
+      </div>
+    </section>
+  </main>
+
+  <div class="markMenu" id="markMenu">
+    <div class="markMenuTitle">選択範囲をどう分類する？</div>
+    <div class="row">
+      <button class="small markBtn" data-tag="強み">強み</button>
+      <button class="small markBtn" data-tag="弱み/課題">弱み/課題</button>
+      <button class="small markBtn" data-tag="機会">機会</button>
+      <button class="small markBtn" data-tag="脅威">脅威</button>
+      <button class="small markBtn" data-tag="制約">制約</button>
+      <button class="small markBtn" data-tag="方向性">方向性</button>
+      <button class="small markBtn" data-tag="設問根拠">設問根拠</button>
+      <button class="small markBtn" data-tag="ターゲット">ターゲット</button>
+      <button class="small markBtn" data-tag="ニーズ">ニーズ</button>
+    </div>
+  </div>
+
+  <script>
+    const STORE_KEY = "shindanshi_html_practice_records_v1";
+    const TIMER_TOTAL_MS = 80 * 60 * 1000;
+    const TIMER_CHECKPOINTS = [
+      { at: 10 * 60 * 1000, label: "10分：設問解釈の切り上げ目安" },
+      { at: 40 * 60 * 1000, label: "40分：与件読解から答案作成へ" },
+      { at: 65 * 60 * 1000, label: "65分：残り15分。答案を埋め切る" },
+      { at: 75 * 60 * 1000, label: "75分：見直し。空欄と設問要求を確認" }
+    ];
+    const TAGS = ["未選択", "強み", "弱み", "弱み/課題", "課題", "機会", "脅威", "制約", "方向性", "設問根拠", "ターゲット", "ニーズ"];
+    const MARK_TAGS = ["強み", "弱み/課題", "機会", "脅威", "制約", "方向性", "設問根拠", "ターゲット", "ニーズ"];
+    const DESIGN_NOTE = `
+      <p>この教材は、与件文を単なる長文ではなく「作問者が埋め込んだ因果関係」として読む訓練用です。</p>
+      <p>最初の目的は、満点答案をいきなり書くことではありません。まず本文から「答案に使える材料」を拾い、その材料が強みなのか、弱みなのか、機会なのか、方向性なのかを判断します。その後で、設問ごとに必要な材料だけを選び、100字前後の因果に圧縮します。</p>
+      <ul>
+        <li><b>強み</b>：施策に使える内部資源、技術、関係性、顧客基盤。</li>
+        <li><b>弱み/課題</b>：成果を阻害している内部要因、管理不備、組織上の問題。</li>
+        <li><b>機会</b>：外部環境の追い風、需要、引き合い、連携先。</li>
+        <li><b>脅威</b>：外部環境の逆風、競争、需要減少、取引条件悪化。</li>
+        <li><b>制約</b>：できることを狭める条件。設備、人員、経験、資金、品質条件など。</li>
+        <li><b>方向性</b>：社長の意向、今後の狙い、設問横断で守るべきゴール。</li>
+      </ul>
+      <p>難しめの問題では、本文に「強み」と明示されません。たとえば「古くから取引がある」は単なる事実にも見えますが、安定受注や共同開発の根拠になるなら強みです。一方で「担当者の経験に依存している」は熟練技能という強みと、標準化不足という弱みの両面を持ちます。</p>
+      <p>分類で迷ったら、次の順で見ます。第一に、それは社内にあるものか外部環境か。第二に、施策に使える追い風か、成果を邪魔する原因か。第三に、設問で問われている未来の方向に接続できるか。ここまで見て初めて、線を引いた情報が答案の材料になります。</p>
+      <p>「本文」タブでは自分で線を引く訓練をします。「分類」タブでは、あらかじめ抽出された重要カードを分類する訓練をします。前者は本番に近い読み取り、後者は分類判断だけを鍛える補助練習です。</p>
+    `;
+
+    let materials = [];
+    let currentId = null;
+    let currentQuestionId = null;
+    let showAnswers = false;
+    let timerInterval = null;
+    let loadErrorMessage = "";
+    let records = loadRecords();
+
+    const $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[c]));
+
+    function normalizeMaterial(raw, fallbackId) {
+      const m = raw || {};
+      const id = m.id || slug(fallbackId || `${m.caseName || "case"}-${m.title || Date.now()}`);
+      const parts = Array.isArray(m.parts) ? m.parts : Array.isArray(m.correctParts) ? m.correctParts : [];
+      const questions = Array.isArray(m.questions) ? m.questions : [];
+      return {
+        ...m,
+        id,
+        year: m.year || "",
+        caseName: m.caseName || m.case || "",
+        title: m.title || id,
+        difficulty: m.difficulty || "",
+        passage: m.passage || "",
+        parts: parts.map((p, i) => ({
+          id: p.id || `p${i + 1}`,
+          tag: p.tag || p.category || "",
+          text: p.text || "",
+          explanation: p.explanation || ""
+        })),
+        questions: questions.map((q, i) => ({
+          id: q.id || `q${i + 1}`,
+          question: q.question || q.text || "",
+          limit: Number(q.limit || q.charLimit || 0),
+          yokenCategory: q.yokenCategory || q.category || "",
+          keywords: Array.isArray(q.keywords) ? q.keywords : Array.isArray(q.cards) ? q.cards : [],
+          cards: Array.isArray(q.cards) ? q.cards : [],
+          modelAnswer: q.modelAnswer || q.answer || "",
+          explanation: q.explanation || ""
+        })),
+        story: m.story || {}
+      };
+    }
+
+    function slug(s) {
+      return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 80) || `material_${Date.now()}`;
+    }
+
+    function loadRecords() {
+      try {
+        return JSON.parse(localStorage.getItem(STORE_KEY)) || { version: 1, byMaterial: {} };
+      } catch (e) {
+        return { version: 1, byMaterial: {} };
+      }
+    }
+
+    function saveRecords() {
+      localStorage.setItem(STORE_KEY, JSON.stringify(records));
+    }
+
+    function currentMaterial() {
+      return materials.find(m => m.id === currentId) || materials[0] || null;
+    }
+
+    function currentRecord() {
+      const m = currentMaterial();
+      if (!m) return null;
+      records.byMaterial[m.id] ||= { partAnswers: {}, answers: {}, userMarks: [], openedAt: "", updatedAt: "" };
+      records.byMaterial[m.id].partAnswers ||= {};
+      records.byMaterial[m.id].answers ||= {};
+      records.byMaterial[m.id].userMarks ||= [];
+      records.byMaterial[m.id].timer ||= { elapsedMs: 0, running: false, startedAt: null, phase: "未設定", logs: [], finishedAt: "" };
+      return records.byMaterial[m.id];
+    }
+
+    async function boot() {
+      bindEvents();
+      $("designNote").innerHTML = DESIGN_NOTE;
+      await loadDefaultMaterials();
+      renderAll();
+      ensureTimerInterval();
+    }
+
+    async function loadDefaultMaterials() {
+      loadErrorMessage = "";
+      const bundlePath = "materials/materials_bundle.json";
+      try {
+        const loaded = await loadMaterialsFromPath(bundlePath);
+        materials = loaded;
+        if (materials[0]) currentId = materials[0].id;
+        return;
+      } catch (bundleError) {
+        loadErrorMessage = `materials_bundle.jsonの自動読込に失敗しました。GitHub Pagesまたはローカルサーバーで開いてください。詳細: ${bundleError.message || bundleError}`;
+      }
+
+      try {
+        const res = await fetch("materials/manifest.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("manifest not found");
+        const manifest = await res.json();
+        const items = Array.isArray(manifest) ? manifest : manifest.materials || [];
+        const loaded = [];
+        for (const item of items) {
+          const path = typeof item === "string" ? item : item.path;
+          if (!path) continue;
+          const fileRes = await fetch(`materials/${path}`, { cache: "no-store" });
+          if (!fileRes.ok) continue;
+          const obj = await fileRes.json();
+          loaded.push(...normalizeMaterialsPayload(obj, path));
+        }
+        materials = loaded;
+        if (materials[0]) currentId = materials[0].id;
+        if (materials.length) loadErrorMessage = "";
+      } catch (manifestError) {
+        loadErrorMessage += ` / manifest読込にも失敗しました: ${manifestError.message || manifestError}`;
+        materials = [];
+      }
+    }
+
+    async function loadMaterialsFromPath(path) {
+      const res = await fetch(path, { cache: "no-store" });
+      if (!res.ok) throw new Error(`${path} not found`);
+      const obj = await res.json();
+      const loaded = normalizeMaterialsPayload(obj, path);
+      if (!loaded.length) throw new Error(`${path} has no materials`);
+      return loaded;
+    }
+
+    function bindEvents() {
+      document.querySelectorAll(".tab").forEach(btn => {
+        btn.addEventListener("click", () => showView(btn.dataset.view));
+      });
+      $("caseFilter").addEventListener("change", renderMaterialSelect);
+      $("openMaterialBtn").addEventListener("click", () => {
+        selectMaterial($("materialSelect").value, "passage");
+      });
+      $("openUnstartedBtn").addEventListener("click", openUnstartedMaterial);
+      $("openRandomBtn").addEventListener("click", openRandomMaterial);
+      $("materialSelect").addEventListener("change", () => {
+        currentId = $("materialSelect").value;
+        currentQuestionId = null;
+        showAnswers = false;
+        renderAll();
+      });
+      $("questionSelect").addEventListener("change", () => {
+        currentQuestionId = $("questionSelect").value;
+        renderQuestions();
+      });
+      $("scorePartsBtn").addEventListener("click", scoreParts);
+      $("scoreMarksBtn").addEventListener("click", () => scoreMarks(true));
+      $("clearMarksBtn").addEventListener("click", clearUserMarks);
+      $("showPartAnswersBtn").addEventListener("click", () => {
+        showAnswers = !showAnswers;
+        renderParts();
+      });
+      document.querySelectorAll(".markBtn").forEach(btn => {
+        btn.addEventListener("click", () => addUserMark(btn.dataset.tag));
+      });
+      document.addEventListener("selectionchange", () => {
+        if (!$("view-passage").classList.contains("hidden")) setTimeout(showMarkMenu, 40);
+      });
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest("#markMenu") && !e.target.closest("#passageText")) hideMarkMenu();
+      });
+      $("materialFiles").addEventListener("change", loadMaterialFiles);
+      $("recordFile").addEventListener("change", importRecordFile);
+      $("downloadRecordBtn").addEventListener("click", downloadRecords);
+      $("copySummaryBtn").addEventListener("click", makeSummary);
+      $("clearCurrentBtn").addEventListener("click", clearCurrentRecord);
+      $("timerStartBtn").addEventListener("click", startTimer);
+      $("timerPauseBtn").addEventListener("click", pauseTimer);
+      $("timerFinishBtn").addEventListener("click", finishTimer);
+      $("timerResetBtn").addEventListener("click", resetTimer);
+      document.querySelectorAll(".phaseBtn").forEach(btn => {
+        btn.addEventListener("click", () => setTimerPhase(btn.dataset.phase));
+      });
+    }
+
+    function showView(name) {
+      hideMarkMenu();
+      document.querySelectorAll("section[id^='view-']").forEach(el => el.classList.add("hidden"));
+      $(`view-${name}`).classList.remove("hidden");
+      document.querySelectorAll(".tab").forEach(btn => btn.classList.toggle("active", btn.dataset.view === name));
+      if (name === "passage") {
+        markOpened();
+        renderMaterialList();
+      }
+      if (name === "dashboard") {
+        renderTimer();
+        renderDashboard();
+      }
+    }
+
+    function renderAll() {
+      renderMaterialSelect();
+      renderMaterialInfo();
+      renderMaterialList();
+      renderPassage();
+      renderParts();
+      renderQuestions();
+      renderStory();
+      renderTimer();
+      renderDashboard();
+      updateKpis();
+    }
+
+    function selectMaterial(id, view = "passage") {
+      if (!id) return;
+      currentId = id;
+      currentQuestionId = null;
+      showAnswers = false;
+      markOpened();
+      renderAll();
+      showView(view);
+    }
+
+    function filteredMaterials() {
+      const c = $("caseFilter").value;
+      return c ? materials.filter(m => m.caseName === c) : materials;
+    }
+
+    function renderMaterialSelect() {
+      const list = filteredMaterials();
+      if (!list.some(m => m.id === currentId)) currentId = list[0]?.id || materials[0]?.id || null;
+      $("materialSelect").innerHTML = list.length
+        ? list.map(m => `<option value="${esc(m.id)}" ${m.id === currentId ? "selected" : ""}>${esc(labelOf(m))}</option>`).join("")
+        : `<option value="">教材がありません</option>`;
+    }
+
+    function labelOf(m) {
+      return [m.year, m.caseName, m.no ? `問題${m.no}` : "", m.title].filter(Boolean).join(" / ");
+    }
+
+    function renderMaterialInfo() {
+      const selected = materials.find(m => m.id === $("materialSelect").value) || currentMaterial();
+      if (!selected) {
+        $("materialInfo").innerHTML = `<b>教材を自動読み込みできませんでした。</b><p class="muted">${esc(loadErrorMessage || "教材JSON/セットJSONを追加読込してください。")}</p>`;
+        return;
+      }
+      $("materialInfo").innerHTML = `
+        <div class="title">${esc(selected.title)}</div>
+        <div><span class="tag blue">${esc(selected.year || "年度未設定")}</span> <span class="tag">${esc(selected.caseName || "事例未設定")}</span></div>
+        <p class="muted">${esc(selected.difficulty || "難易度メモなし")}</p>
+        <div>本文：約${[...selected.passage].length}字 / 分類対象：${selected.parts.length}件 / 設問：${selected.questions.length}問</div>
+      `;
+    }
+
+    function renderMaterialList() {
+      const list = filteredMaterials();
+      $("materialList").innerHTML = list.map(m => {
+        const rec = records.byMaterial[m.id] || {};
+        const status = materialStatus(m, rec);
+        const marked = (rec.userMarks || []).length;
+        const answered = Object.values(rec.answers || {}).filter(a => a?.text?.trim()).length;
+        return `
+          <div class="materialItem ${m.id === currentId ? "activeItem" : ""}" data-material-id="${esc(m.id)}">
+            <div><b>${esc(labelOf(m))}</b></div>
+            <div class="row" style="margin-top:6px">
+              <span class="tag ${status.kind}">${esc(status.label)}</span>
+              <span class="muted">線引き ${marked}件</span>
+              <span class="muted">答案 ${answered}/${m.questions.length}</span>
+            </div>
+          </div>
+        `;
+      }).join("") || `<div class="muted">教材がありません。</div>`;
+      document.querySelectorAll(".materialItem").forEach(item => {
+        item.addEventListener("click", () => {
+          selectMaterial(item.dataset.materialId, "passage");
+        });
+      });
+    }
+
+    function materialStatus(m, rec) {
+      const answerCount = Object.values(rec.answers || {}).filter(a => a?.text?.trim()).length;
+      const markCount = (rec.userMarks || []).length;
+      if (rec.timer?.finishedAt) return { label: "80分完了", kind: "good" };
+      if (m.questions.length && answerCount >= m.questions.length) return { label: "設問完了", kind: "good" };
+      if (answerCount > 0) return { label: "答案あり", kind: "blue" };
+      if (markCount > 0) return { label: "線引きあり", kind: "warn" };
+      if (rec.openedAt) return { label: "本文確認", kind: "blue" };
+      return { label: "未着手", kind: "" };
+    }
+
+    function openUnstartedMaterial() {
+      const list = filteredMaterials();
+      const candidates = list.filter(m => {
+        const rec = records.byMaterial[m.id];
+        return !rec || (!rec.openedAt && !(rec.userMarks || []).length && !Object.values(rec.answers || {}).some(a => a?.text?.trim()));
+      });
+      const picked = candidates[0] || list[0];
+      if (!picked) return;
+      selectMaterial(picked.id, "passage");
+    }
+
+    function openRandomMaterial() {
+      const list = filteredMaterials();
+      if (!list.length) return;
+      const picked = list[Math.floor(Math.random() * list.length)];
+      selectMaterial(picked.id, "passage");
+    }
+
+    function getAnswerCount(m, rec) {
+      return Object.values(rec?.answers || {}).filter(a => a?.text?.trim()).length;
+    }
+
+    function isStarted(rec) {
+      return !!(rec && (rec.openedAt || (rec.userMarks || []).length || Object.values(rec.answers || {}).some(a => a?.text?.trim()) || rec.timer?.elapsedMs || rec.timer?.running));
+    }
+
+    function isCompleted(m, rec) {
+      return !!(rec?.timer?.finishedAt || (m.questions.length && getAnswerCount(m, rec) >= m.questions.length));
+    }
+
+    function computeMarkScore(m, rec) {
+      const marks = rec?.userMarks || [];
+      let locationHit = 0;
+      let tagHit = 0;
+      const usedMarks = new Set();
+      for (const part of m.parts) {
+        const foundIndex = marks.findIndex((mark, idx) => !usedMarks.has(idx) && samePlace(mark.text || m.passage.slice(mark.start, mark.end), part.text));
+        if (foundIndex >= 0) {
+          locationHit++;
+          usedMarks.add(foundIndex);
+          if (normalizeTag(marks[foundIndex].tag) === normalizeTag(part.tag)) tagHit++;
+        }
+      }
+      const total = m.parts.length || 1;
+      return {
+        locationHit,
+        tagHit,
+        total: m.parts.length,
+        recall: Math.round(locationHit / total * 100),
+        tagRate: Math.round(tagHit / total * 100)
+      };
+    }
+
+    function computePartScore(m, rec) {
+      let correct = 0;
+      let answered = 0;
+      for (const p of m.parts) {
+        const ans = rec?.partAnswers?.[p.id] || "未選択";
+        if (ans !== "未選択") answered++;
+        if (normalizeTag(ans) === normalizeTag(p.tag)) correct++;
+      }
+      return {
+        correct,
+        answered,
+        total: m.parts.length,
+        rate: m.parts.length ? Math.round(correct / m.parts.length * 100) : 0
+      };
+    }
+
+    function updateKpis() {
+      const m = currentMaterial();
+      $("materialCount").textContent = materials.length;
+      $("partCount").textContent = m?.parts.length || 0;
+      $("questionCount").textContent = m?.questions.length || 0;
+    }
+
+    function renderPassage() {
+      const m = currentMaterial();
+      $("passageTitle").textContent = m ? labelOf(m) : "本文";
+      $("passageMeta").textContent = m ? `本文 約${[...m.passage].length}字。本文をドラッグ選択すると分類メニューが出ます。PCではマウス選択、スマホでは長押し選択で線引きできます。` : "";
+      $("passageText").innerHTML = m ? renderPassageWithMarks(m.passage, currentRecord()?.userMarks || []) : "教材がありません。";
+      renderMarkList();
+      scoreMarks(false);
+    }
+
+    function markOpened() {
+      const rec = currentRecord();
+      if (!rec) return;
+      rec.openedAt ||= new Date().toISOString();
+      rec.updatedAt = new Date().toISOString();
+      saveRecords();
+    }
+
+    function renderPassageWithMarks(text, marks) {
+      const safeMarks = [...marks]
+        .filter(m => Number.isFinite(m.start) && Number.isFinite(m.end) && m.end > m.start)
+        .sort((a, b) => a.start - b.start || b.end - a.end);
+      let html = "";
+      let pos = 0;
+      for (const mark of safeMarks) {
+        if (mark.start < pos || mark.start >= text.length) continue;
+        const end = Math.min(mark.end, text.length);
+        html += esc(text.slice(pos, mark.start));
+        html += `<mark class="mark ${tagClass(mark.tag)}" title="${esc(mark.tag)}" data-mark-id="${esc(mark.id)}">${esc(text.slice(mark.start, end))}</mark>`;
+        pos = end;
+      }
+      html += esc(text.slice(pos));
+      return html;
+    }
+
+    function tagClass(tag) {
+      const t = normalizeTag(tag);
+      if (t === "強み") return "s";
+      if (t === "弱み/課題") return "w";
+      if (t === "機会") return "o";
+      if (t === "脅威") return "t";
+      if (t === "制約") return "c";
+      if (t === "方向性") return "d";
+      if (t === "設問根拠") return "q";
+      if (t === "ターゲット") return "g";
+      if (t === "ニーズ") return "n";
+      return "";
+    }
+
+    function getSelectionOffsets() {
+      const sel = window.getSelection();
+      const el = $("passageText");
+      if (!sel || sel.rangeCount === 0 || !el.contains(sel.anchorNode) || !el.contains(sel.focusNode)) return null;
+      const range = sel.getRangeAt(0);
+      const selected = range.toString();
+      if (!selected.trim()) return null;
+      const pre = document.createRange();
+      pre.selectNodeContents(el);
+      pre.setEnd(range.startContainer, range.startOffset);
+      const start = pre.toString().length;
+      return { start, end: start + selected.length, selected, range };
+    }
+
+    function showMarkMenu() {
+      const info = getSelectionOffsets();
+      const menu = $("markMenu");
+      if (!info) {
+        hideMarkMenu();
+        return;
+      }
+      const rect = info.range.getBoundingClientRect();
+      menu.style.display = "block";
+      const width = menu.offsetWidth || 420;
+      const height = menu.offsetHeight || 110;
+      let left = rect.left;
+      let top = rect.bottom + 8;
+      if (left + width > window.innerWidth - 8) left = window.innerWidth - width - 8;
+      if (left < 8) left = 8;
+      if (top + height > window.innerHeight - 8) top = Math.max(8, rect.top - height - 8);
+      menu.style.left = `${left}px`;
+      menu.style.top = `${top}px`;
+    }
+
+    function hideMarkMenu() {
+      const menu = $("markMenu");
+      if (menu) menu.style.display = "none";
+    }
+
+    function addUserMark(tag) {
+      const m = currentMaterial();
+      const rec = currentRecord();
+      const info = getSelectionOffsets();
+      if (!m || !rec || !info) return;
+      const trimmed = info.selected.trim();
+      const trimOffset = info.selected.indexOf(trimmed);
+      const start = info.start + trimOffset;
+      const end = start + trimmed.length;
+      if (end <= start) return;
+      rec.userMarks = (rec.userMarks || []).filter(mark => mark.end <= start || mark.start >= end);
+      rec.userMarks.push({
+        id: `${Date.now()}_${Math.random().toString(16).slice(2)}`,
+        tag,
+        start,
+        end,
+        text: m.passage.slice(start, end)
+      });
+      rec.userMarks.sort((a, b) => a.start - b.start || a.end - b.end);
+      rec.updatedAt = new Date().toISOString();
+      saveRecords();
+      window.getSelection()?.removeAllRanges();
+      hideMarkMenu();
+      renderPassage();
+      renderMaterialList();
+    }
+
+    function renderMarkList() {
+      const m = currentMaterial();
+      const rec = currentRecord();
+      const list = rec?.userMarks || [];
+      if (!m || list.length === 0) {
+        $("markList").innerHTML = `<div class="muted">まだ線引きがありません。本文をドラッグして分類してください。</div>`;
+        return;
+      }
+      $("markList").innerHTML = list.map(mark => `
+        <div class="partCard">
+          <div><span class="tag ${tagClass(mark.tag)}">${esc(mark.tag)}</span></div>
+          <div class="partText">${esc(m.passage.slice(mark.start, mark.end))}</div>
+          <button class="small" data-delete-mark="${esc(mark.id)}">削除</button>
+        </div>
+      `).join("");
+      document.querySelectorAll("[data-delete-mark]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const rec2 = currentRecord();
+          rec2.userMarks = (rec2.userMarks || []).filter(mark => mark.id !== btn.dataset.deleteMark);
+          rec2.updatedAt = new Date().toISOString();
+          saveRecords();
+          renderPassage();
+          renderMaterialList();
+        });
+      });
+    }
+
+    function clearUserMarks() {
+      const rec = currentRecord();
+      if (!rec || !(rec.userMarks || []).length) return;
+      if (!confirm("本文の線引きをすべて削除しますか？")) return;
+      rec.userMarks = [];
+      rec.updatedAt = new Date().toISOString();
+      saveRecords();
+      renderPassage();
+      renderMaterialList();
+    }
+
+    function scoreMarks(writeMessage = true) {
+      const m = currentMaterial();
+      const rec = currentRecord();
+      if (!m || !rec) return;
+      const score = computeMarkScore(m, rec);
+      $("markScoreText").textContent = writeMessage
+        ? `線引き：抽出 ${score.locationHit}/${m.parts.length} (${score.recall}%) / 分類一致 ${score.tagHit}/${m.parts.length} (${score.tagRate}%)`
+        : $("markScoreText").textContent || "未採点";
+      renderDashboard();
+    }
+
+    function samePlace(a, b) {
+      const x = compactText(a);
+      const y = compactText(b);
+      if (!x || !y) return false;
+      return x.includes(y) || y.includes(x);
+    }
+
+    function compactText(s) {
+      return String(s || "").replace(/\s/g, "").replace(/[、。，．・「」『』（）()]/g, "");
+    }
+
+    function renderParts() {
+      const m = currentMaterial();
+      const r = currentRecord();
+      if (!m) {
+        $("partsList").innerHTML = "";
+        return;
+      }
+      $("partsList").innerHTML = m.parts.map((p, i) => {
+        const chosen = r?.partAnswers?.[p.id] || "未選択";
+        const ok = normalizeTag(chosen) === normalizeTag(p.tag);
+        const answerBlock = showAnswers ? `
+          <details open>
+            <summary>正解と解説</summary>
+            <div>正解：<span class="tag ${ok ? "good" : "bad"}">${esc(p.tag)}</span></div>
+            <div>${esc(p.explanation || "解説なし")}</div>
+          </details>
+        ` : "";
+        return `
+          <div class="partCard">
+            <div class="partText">${i + 1}. ${esc(p.text)}</div>
+            <label>分類</label>
+            <select data-part-id="${esc(p.id)}" class="partSelect">
+              ${TAGS.map(t => `<option ${t === chosen ? "selected" : ""}>${esc(t)}</option>`).join("")}
+            </select>
+            ${answerBlock}
+          </div>
+        `;
+      }).join("");
+      document.querySelectorAll(".partSelect").forEach(sel => {
+        sel.addEventListener("change", () => {
+          const rec = currentRecord();
+          rec.partAnswers[sel.dataset.partId] = sel.value;
+          rec.updatedAt = new Date().toISOString();
+          saveRecords();
+          scoreParts(false);
+        });
+      });
+      scoreParts(false);
+    }
+
+    function normalizeTag(t) {
+      const s = String(t || "").replace(/\s/g, "");
+      if (s === "弱み" || s === "課題" || s === "弱み/課題") return "弱み/課題";
+      return s;
+    }
+
+    function scoreParts(writeMessage = true) {
+      const m = currentMaterial();
+      const r = currentRecord();
+      if (!m || !r) return;
+      const score = computePartScore(m, r);
+      $("scoreCorrect").textContent = score.correct;
+      $("scoreAnswered").textContent = score.answered;
+      $("scoreRate").textContent = `${score.rate}%`;
+      $("partScoreText").textContent = writeMessage ? `分類スコア：${score.correct}/${m.parts.length}` : $("partScoreText").textContent;
+      renderDashboard();
+    }
+
+    function renderQuestions() {
+      const m = currentMaterial();
+      const r = currentRecord();
+      if (!m) {
+        $("questionsList").innerHTML = "";
+        $("questionSelect").innerHTML = "";
+        return;
+      }
+      if (!m.questions.some(q => q.id === currentQuestionId)) currentQuestionId = m.questions[0]?.id || null;
+      $("questionSelect").innerHTML = m.questions.map((q, i) => {
+        const answered = r?.answers?.[q.id]?.text?.trim() ? " ✓" : "";
+        return `<option value="${esc(q.id)}" ${q.id === currentQuestionId ? "selected" : ""}>設問${i + 1}${answered}</option>`;
+      }).join("");
+      const q = m.questions.find(x => x.id === currentQuestionId) || m.questions[0];
+      if (!q) {
+        $("questionsList").innerHTML = `<div class="muted">設問がありません。</div>`;
+        return;
+      }
+      const i = m.questions.findIndex(x => x.id === q.id);
+      const ans = r?.answers?.[q.id]?.text || "";
+      const words = q.keywords || q.cards || [];
+      $("questionsList").innerHTML = `
+        <div class="qCard">
+          <div class="title">設問${i + 1}</div>
+          <div>${esc(q.question)}</div>
+          <div class="muted">${q.limit ? `${q.limit}字以内 / ` : ""}${esc(q.yokenCategory || "")}</div>
+          <textarea data-q-id="${esc(q.id)}" class="answerInput" placeholder="ここに答案を書く">${esc(ans)}</textarea>
+          <div class="answerMeta">
+            <span id="count-${esc(q.id)}">${[...ans].length}字</span>
+            <span id="kw-${esc(q.id)}">${keywordScore(ans, words).label}</span>
+          </div>
+          <details>
+            <summary>答案例・キーワード・解説を見る</summary>
+            <div>カード：${words.map(w => `<span class="tag">${esc(w)}</span>`).join(" ") || "なし"}</div>
+            <p><b>答案例：</b>${esc(q.modelAnswer || "この教材には答案例がありません。教材JSONの modelAnswer を追加してください。")}</p>
+            <p><b>解説：</b>${esc(q.explanation || "解説なし")}</p>
+          </details>
+        </div>
+      `;
+      document.querySelectorAll(".answerInput").forEach(area => {
+        area.addEventListener("input", () => {
+          const rec = currentRecord();
+          rec.answers[area.dataset.qId] = { text: area.value, updatedAt: new Date().toISOString() };
+          rec.updatedAt = new Date().toISOString();
+          saveRecords();
+          const q = currentMaterial().questions.find(x => x.id === area.dataset.qId);
+          $(`count-${q.id}`).textContent = `${[...area.value].length}字`;
+          $(`kw-${q.id}`).textContent = keywordScore(area.value, q.keywords || q.cards || []).label;
+          renderMaterialList();
+        });
+      });
+    }
+
+    function keywordScore(ans, words) {
+      const list = words || [];
+      const hit = list.filter(w => ans.includes(w));
+      const rate = list.length ? Math.round(hit.length / list.length * 100) : 0;
+      return { hit, rate, label: `キーワード ${hit.length}/${list.length} (${rate}%)` };
+    }
+
+    function renderStory() {
+      const m = currentMaterial();
+      const s = m?.story || {};
+      const rows = [
+        ["現在", s.current],
+        ["変化", s.change],
+        ["障害", s.obstacle || s.problem],
+        ["目標", s.goal || s.target],
+        ["施策", s.action],
+        ["効果", s.effect]
+      ].filter(([, v]) => v);
+      $("storyBox").innerHTML = rows.length
+        ? rows.map(([k, v]) => `<div class="partCard"><b>${esc(k)}</b><div>${esc(v)}</div></div>`).join("")
+        : `<div class="muted">ストーリー解説はこの教材JSONには未設定です。</div>`;
+    }
+
+    function ensureTimerInterval() {
+      if (timerInterval) return;
+      timerInterval = setInterval(() => {
+        const rec = currentRecord();
+        if (rec?.timer?.running) {
+          renderTimer();
+          renderDashboard();
+        }
+      }, 1000);
+    }
+
+    function timerOf(rec) {
+      rec.timer ||= { elapsedMs: 0, running: false, startedAt: null, phase: "未設定", logs: [], finishedAt: "" };
+      rec.timer.logs ||= [];
+      return rec.timer;
+    }
+
+    function getTimerElapsed(timer) {
+      const base = Number(timer.elapsedMs || 0);
+      if (!timer.running || !timer.startedAt) return base;
+      return base + Math.max(0, Date.now() - new Date(timer.startedAt).getTime());
+    }
+
+    function formatTime(ms) {
+      const clamped = Math.max(0, Math.ceil(ms / 1000));
+      const min = Math.floor(clamped / 60);
+      const sec = clamped % 60;
+      return `${String(min).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+    }
+
+    function startTimer() {
+      const rec = currentRecord();
+      if (!rec) return;
+      stopOtherRunningTimers(currentMaterial()?.id);
+      const timer = timerOf(rec);
+      if (!timer.running) {
+        timer.running = true;
+        timer.startedAt = new Date().toISOString();
+        timer.finishedAt = "";
+        rec.openedAt ||= new Date().toISOString();
+        rec.updatedAt = new Date().toISOString();
+        saveRecords();
+      }
+      ensureTimerInterval();
+      renderTimer();
+      renderDashboard();
+    }
+
+    function stopOtherRunningTimers(activeId) {
+      for (const [id, rec] of Object.entries(records.byMaterial || {})) {
+        if (id === activeId || !rec?.timer?.running) continue;
+        const timer = timerOf(rec);
+        timer.elapsedMs = getTimerElapsed(timer);
+        timer.running = false;
+        timer.startedAt = null;
+      }
+    }
+
+    function pauseTimer() {
+      const rec = currentRecord();
+      if (!rec) return;
+      const timer = timerOf(rec);
+      timer.elapsedMs = getTimerElapsed(timer);
+      timer.running = false;
+      timer.startedAt = null;
+      rec.updatedAt = new Date().toISOString();
+      saveRecords();
+      renderTimer();
+      renderDashboard();
+    }
+
+    function finishTimer() {
+      const rec = currentRecord();
+      if (!rec) return;
+      const timer = timerOf(rec);
+      timer.elapsedMs = getTimerElapsed(timer);
+      timer.running = false;
+      timer.startedAt = null;
+      timer.finishedAt = new Date().toISOString();
+      rec.updatedAt = new Date().toISOString();
+      saveRecords();
+      renderTimer();
+      renderDashboard();
+      renderMaterialList();
+    }
+
+    function resetTimer() {
+      const rec = currentRecord();
+      if (!rec) return;
+      if (!confirm("この教材の80分タイマーをリセットしますか？")) return;
+      rec.timer = { elapsedMs: 0, running: false, startedAt: null, phase: "未設定", logs: [], finishedAt: "" };
+      rec.updatedAt = new Date().toISOString();
+      saveRecords();
+      renderTimer();
+      renderDashboard();
+      renderMaterialList();
+    }
+
+    function setTimerPhase(phase) {
+      const rec = currentRecord();
+      if (!rec) return;
+      const timer = timerOf(rec);
+      timer.phase = phase;
+      timer.logs.push({ phase, atMs: getTimerElapsed(timer), time: new Date().toISOString() });
+      rec.updatedAt = new Date().toISOString();
+      saveRecords();
+      renderTimer();
+    }
+
+    function renderTimer() {
+      if (!$("timerDisplay")) return;
+      const m = currentMaterial();
+      const rec = currentRecord();
+      if (!m || !rec) {
+        $("timerDisplay").textContent = "80:00";
+        $("timerStatus").textContent = "教材を選んでください。";
+        return;
+      }
+      const timer = timerOf(rec);
+      const elapsed = getTimerElapsed(timer);
+      const remaining = TIMER_TOTAL_MS - elapsed;
+      $("timerDisplay").textContent = remaining >= 0 ? formatTime(remaining) : `+${formatTime(-remaining)}`;
+      $("timerDisplay").classList.toggle("timerWarn", remaining <= 15 * 60 * 1000);
+      const next = TIMER_CHECKPOINTS.find(x => x.at > elapsed);
+      const state = timer.finishedAt ? "完了" : timer.running ? "進行中" : elapsed > 0 ? "一時停止" : "未開始";
+      const checkpoint = next ? `次: ${next.label}` : "最終盤: 空欄と設問要求を確認";
+      $("timerStatus").textContent = `${state} / ${timer.phase || "未設定"} / 経過 ${formatTime(elapsed)} / ${checkpoint}`;
+    }
+
+    function renderDashboard() {
+      if (!$("dashboardSummary")) return;
+      const started = materials.filter(m => isStarted(records.byMaterial[m.id])).length;
+      const completed = materials.filter(m => isCompleted(m, records.byMaterial[m.id])).length;
+      const markScores = materials
+        .map(m => ({ m, rec: records.byMaterial[m.id] }))
+        .filter(x => (x.rec?.userMarks || []).length)
+        .map(x => computeMarkScore(x.m, x.rec).tagRate);
+      const avgMark = markScores.length ? Math.round(markScores.reduce((a, b) => a + b, 0) / markScores.length) : 0;
+      $("dashStarted").textContent = started;
+      $("dashCompleted").textContent = completed;
+      $("dashAvgMark").textContent = `${avgMark}%`;
+
+      const rows = ["事例I", "事例II", "事例III"].map(caseName => {
+        const subset = materials.filter(m => m.caseName === caseName);
+        const s = subset.filter(m => isStarted(records.byMaterial[m.id])).length;
+        const c = subset.filter(m => isCompleted(m, records.byMaterial[m.id])).length;
+        return `<div class="noteItem"><b>${esc(caseName)}</b><div>着手 ${s}/${subset.length} / 完了 ${c}/${subset.length}</div></div>`;
+      });
+      $("dashboardSummary").innerHTML = rows.join("");
+
+      const recent = materials
+        .map(m => ({ m, rec: records.byMaterial[m.id] }))
+        .filter(x => x.rec?.updatedAt || x.rec?.openedAt)
+        .sort((a, b) => String(b.rec.updatedAt || b.rec.openedAt).localeCompare(String(a.rec.updatedAt || a.rec.openedAt)))
+        .slice(0, 8);
+      $("recentList").innerHTML = recent.length ? recent.map(({ m, rec }) => {
+        const mark = computeMarkScore(m, rec);
+        const answers = getAnswerCount(m, rec);
+        return `
+          <div class="noteItem">
+            <div><b>${esc(labelOf(m))}</b></div>
+            <div class="muted">更新: ${esc(formatDateTime(rec.updatedAt || rec.openedAt))}</div>
+            <div>線引き分類 ${mark.tagHit}/${mark.total} / 答案 ${answers}/${m.questions.length}</div>
+          </div>
+        `;
+      }).join("") : `<div class="muted">まだ演習履歴がありません。</div>`;
+
+      const mistakes = collectMistakes().slice(0, 30);
+      $("mistakeNotes").innerHTML = mistakes.length ? mistakes.map(item => `
+        <div class="noteItem">
+          <div><span class="tag ${item.kindClass || ""}">${esc(item.kind)}</span> <b>${esc(item.material)}</b></div>
+          <div>${esc(item.text)}</div>
+          <div class="muted">${esc(item.detail)}</div>
+        </div>
+      `).join("") : `<div class="muted">まだ間違いノートはありません。分類や答案を書いた後に表示されます。</div>`;
+    }
+
+    function collectMistakes() {
+      const notes = [];
+      for (const m of materials) {
+        const rec = records.byMaterial[m.id];
+        if (!rec) continue;
+        for (const p of m.parts) {
+          const ans = rec.partAnswers?.[p.id];
+          if (ans && ans !== "未選択" && normalizeTag(ans) !== normalizeTag(p.tag)) {
+            notes.push({
+              kind: "分類ミス",
+              kindClass: "bad",
+              material: labelOf(m),
+              text: p.text,
+              detail: `自分: ${ans} / 正解: ${p.tag}`
+            });
+          }
+        }
+        if ((rec.userMarks || []).length) {
+          for (const p of m.parts) {
+            const hit = (rec.userMarks || []).some(mark => samePlace(mark.text || m.passage.slice(mark.start, mark.end), p.text));
+            if (!hit) {
+              notes.push({
+                kind: "線引き漏れ",
+                kindClass: "warn",
+                material: labelOf(m),
+                text: p.text,
+                detail: `分類: ${p.tag} / ${p.explanation || "重要箇所"}`
+              });
+            }
+          }
+        }
+        for (const q of m.questions) {
+          const ans = rec.answers?.[q.id]?.text || "";
+          if (!ans.trim()) continue;
+          const missing = (q.keywords || q.cards || []).filter(w => !ans.includes(w));
+          if (missing.length) {
+            notes.push({
+              kind: "答案不足",
+              kindClass: "blue",
+              material: `${labelOf(m)} / ${q.id}`,
+              text: q.question,
+              detail: `不足キーワード: ${missing.join("、")}`
+            });
+          }
+        }
+      }
+      return notes;
+    }
+
+    function formatDateTime(s) {
+      if (!s) return "";
+      const d = new Date(s);
+      if (Number.isNaN(d.getTime())) return s;
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      const hh = String(d.getHours()).padStart(2, "0");
+      const mi = String(d.getMinutes()).padStart(2, "0");
+      return `${mm}/${dd} ${hh}:${mi}`;
+    }
+
+    async function loadMaterialFiles(e) {
+      const files = [...e.target.files];
+      for (const file of files) {
+        try {
+          const obj = JSON.parse(await file.text());
+          const loaded = normalizeMaterialsPayload(obj, file.name);
+          const ids = new Set(loaded.map(m => m.id));
+          materials = materials.filter(x => !ids.has(x.id)).concat(loaded);
+          currentId = loaded[0]?.id || currentId;
+          currentQuestionId = null;
+        } catch (err) {
+          alert(`${file.name} を読み込めませんでした。JSON形式を確認してください。`);
+        }
+      }
+      renderAll();
+    }
+
+    function normalizeMaterialsPayload(obj, fallbackId) {
+      const rawList = Array.isArray(obj) ? obj : Array.isArray(obj?.materials) ? obj.materials : [obj];
+      return rawList
+        .filter(Boolean)
+        .map((item, i) => normalizeMaterial(item, `${fallbackId}_${i + 1}`));
+    }
+
+    function downloadRecords() {
+      const blob = new Blob([JSON.stringify(records, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `shindanshi_records_${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    async function importRecordFile(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      try {
+        const imported = JSON.parse(await file.text());
+        if (!imported.byMaterial) throw new Error("invalid schema");
+        records = imported;
+        saveRecords();
+        renderAll();
+        alert("記録を読み込みました。");
+      } catch (err) {
+        alert("記録JSONを読み込めませんでした。");
+      }
+    }
+
+    function makeSummary() {
+      const m = currentMaterial();
+      const r = currentRecord();
+      if (!m || !r) return;
+      const partAnswers = m.parts.map(p => ({
+        text: p.text,
+        correctTag: p.tag,
+        myTag: r.partAnswers[p.id] || "未選択"
+      }));
+      const userMarks = (r.userMarks || []).map(mark => ({
+        tag: mark.tag,
+        text: m.passage.slice(mark.start, mark.end),
+        start: mark.start,
+        end: mark.end
+      }));
+      const answers = m.questions.map(q => ({
+        question: q.question,
+        answer: r.answers[q.id]?.text || "",
+        keywords: q.keywords || q.cards || []
+      }));
+      const summary = {
+        material: { id: m.id, year: m.year, caseName: m.caseName, title: m.title },
+        timer: r.timer || {},
+        partScore: {
+          correct: Number($("scoreCorrect").textContent || 0),
+          total: m.parts.length,
+          rate: $("scoreRate").textContent
+        },
+        userMarks,
+        partAnswers,
+        answers,
+        updatedAt: new Date().toISOString()
+      };
+      $("summaryBox").value = JSON.stringify(summary, null, 2);
+      navigator.clipboard?.writeText($("summaryBox").value).catch(() => {});
+    }
+
+    function clearCurrentRecord() {
+      const m = currentMaterial();
+      if (!m) return;
+      if (!confirm("この教材の回答と分類記録を削除しますか？")) return;
+      delete records.byMaterial[m.id];
+      saveRecords();
+      showAnswers = false;
+      renderAll();
+    }
+
+    boot();
+  </script>
+</body>
+</html>
